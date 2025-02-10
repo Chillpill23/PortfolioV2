@@ -1,8 +1,85 @@
 :root{
-  
+  /* Font Sizes */
+  --fs-xxl:clamp(2.5rem, 5vw, 3.815rem); /* 68px */
+  --fs-xl:clamp(2rem, 4vw, 3.052rem); /* 48px */
+  --fs-l:clamp(1.75rem, 3.5vw, 2.441rem); /* 39px */
+  --fs-m:clamp(1.5rem, 3vw, 1.953rem); /* 31px */
+  --fs-s:clamp(1.25rem, 2.5vw, 1.563rem); /* 25px */
+  --fs-xs:clamp(1rem, 2vw, 1.25rem); /* 20px */
+
+  --fs-body:clamp(1rem, 1.5vw, 1rem); /* 16px */
+  --fs-sub:clamp(0.7rem, 1.2vw, 0.8rem); /* 12px */
+  --fs-hints:clamp(0.5rem, 1vw, 0.64rem); /* 10px */
+
+  /* Font Family */
+  --ff-main:"Montserrat", serif;
+  --ff-body:"Nunito", serif;
+
+  /* Colors */
+  --clr-primary:#8623FF;
+  --clr-primary900:#691ACB;
+  --clr-primary400:#D8B6FF;
+  --clr-primary200:#ECDAFF;
+  --clr-primary100:#F6EDFF;
+
+  --clr-secondary:#FAA646;
+  --clr-secondary900:#D88A31;
+  --clr-secondary400:#FCBA6E;
+  --clr-secondary200:#FFC98B;
+  --clr-secondary100:#FFE0BC;
+
+  --clr-neutral:#FFFFFF;
+  --clr-neutral400:#D7D7D7;
+  --clr-neutral200:#F5F1F7;
+  --clr-neutral600:#4E4E51;
+  --clr-neutral700:#3D3D3E;
+  --clr-neutral800:#282828;
+  --clr-neutral900:#212121;
+
+  --br-radius:4px;
+}
+
+*{
+  font-family: var(--ff-main);
 }
 
 body{
   background-color:black;
   color:white;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.815rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.052rem);
+}
+
+h3 {
+  font-size: clamp(1.75rem, 3.5vw, 2.441rem);
+}
+
+h4 {
+  font-size: clamp(1.5rem, 3vw, 1.953rem);
+}
+
+h5 {
+  font-size: clamp(1.25rem, 2.5vw, 1.563rem);
+}
+
+h6 {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+p {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+small {
+  font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+}
+
+.smaller-text {
+  font-size: clamp(0.5rem, 1vw, 0.64rem);
 }
