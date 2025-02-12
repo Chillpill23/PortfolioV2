@@ -1,10 +1,12 @@
 .hero{
-
+  padding: 0;
+  margin: 0 0 40px 0;
 }
 
 .hero__wrapper{
   position: relative;
   height: 100%;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -33,11 +35,15 @@
 
 .hero__cta-wrapper{
   display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .hero__background{
   overflow: hidden;
-  background-image:url('../assets/hero/hero-bg.png')
+  background-image:url('../assets/hero/hero-bg.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
 .hero__wolf{
@@ -62,6 +68,45 @@
   top:50%;
   right:50%;
   transform:translate(50%, -50%)
+}
+
+/* Experience Section */
+
+.exp__cards{
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap:0.5rem;
+}
+
+.exp__sCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.exp__caption{
+  margin-bottom: 1.5rem;
+}
+
+.sCard__visual{
+  background: var(--clr-neutral800);
+  width: 100%;
+  padding: 1.5rem 1rem;
+  border-radius: 4px;
+}
+
+.sCard__visual * {
+  color: var(--clr-primary400);
+  fill: var(--clr-primary400);
+  font-size: var(--fs-l);
+  font-weight: 700;
+  font-family: var(--ff-main);
+}
+
+.sCard__content{
+  font-size: var(--fs-sub);
 }
 
 @media screen and (min-width:768px){
@@ -105,13 +150,47 @@
     right: 8%;
     transform: translateY(-79%);
   }
+
+  /* Experience Tablet */
+  .exp__caption{
+    margin-bottom: 2rem;
+  }
+
+  .exp__title{
+    font-size: var(--fs-m);
+    font-weight: 600;
+  }
+
+  .exp__subtitle{
+    font-weight: 500;
+    font-family: var(--ff-main);
+    color: var(--clr-neutral500);
+  }
+
+  .exp__cards{
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:1rem;
+  }
+
+  .sCard__visual{
+    padding: 1.8rem 1rem;
+  }
+
+  .sCard__visual * {
+    font-size: var(--fs-l);
+    letter-spacing: 2px;
+  }
+
+  .sCard__content{
+    padding: 0.2rem 0.5rem;
+  }
 }
 
 
 @media screen and (min-width:992px){
   .hero__content{
     padding-top:5%;
-    padding-left: 5%;
+    width: 100%;
   }
   .hero__moon{
     right: 10%;
@@ -128,6 +207,16 @@
 }
 
 @media screen and (min-width:1200px){
+
+  .hero__wrapper{
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero__title{
+    width: 50%;
+  }
+
   .hero__moon{
     right: 11%;
     transform: translateY(-110%);
@@ -135,5 +224,22 @@
 
   .hero__moon > *{
     transform:translate(50%, -50%) scale(1.5)
+  }
+
+  /* Experience - Large Desktops */
+  .exp__sCard{
+    flex-direction: row;
+    background: var(--clr-neutral800);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+
+  .sCard__visual{
+    background:none;
+    padding: 0.5rem;
+  }
+
+  .sCard__content{
+    text-align: left;
   }
 }

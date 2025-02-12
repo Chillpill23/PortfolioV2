@@ -3,8 +3,8 @@ import '../css/Button.css'
 
 function Button(props) {
   return (
-    <button className={props.class} aria-label={props.name}>
-      {props.icon && (<div></div>)}
+    <button role='button' className={props.class} aria-label={props.name}>
+      {props.icon && (<span>{props.icon}</span>)}
       <span>{props.name}</span>
     </button>
   )
