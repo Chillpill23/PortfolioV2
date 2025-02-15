@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Scroll } from '../utils/Scroll'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBarsStaggered } from '@fortawesome/free-solid-svg-icons'
@@ -21,7 +22,14 @@ function Header() {
             {MainLinks.map((link,index) => {
               return(
                 <li key={link.name}>
-                    <a title={link.title} className='header__link'><span>0{index + 1}. </span>{link.name}</a>
+                    <a title={link.title} 
+                     className='header__link' 
+                     onClick={(e) => {
+                      e.preventDefault();
+                      setIsOpen(!isOpen)
+                      Scroll(link.url)
+                     }}
+                    ><span>0{index + 1}. </span>{link.name}</a>
                 </li>
               )
             })}

@@ -113,7 +113,7 @@
 .projects__cards{
     display: flex;
     flex-direction: column;
-    gap: 10rem;
+    gap: 5rem;
 }
 
 .projects__lCard{
@@ -130,6 +130,7 @@
 .lCard__image img{
   width: 100%;
   border-radius: 8px;
+  filter: brightness(0.8);
 }
 
 
@@ -281,6 +282,11 @@
     justify-content: flex-end;
   }
 
+  .projects__cards{
+    gap: 10rem;
+  }
+
+
   /* About */
 
   .about__image {
@@ -332,11 +338,7 @@
     display: flex;
     justify-content: center;
   }
-
-  .hero__title{
-    width: 50%;
-  }
-
+  
   .hero__moon{
     right: 11%;
     transform: translateY(-110%);
@@ -361,5 +363,12 @@
 
   .sCard__content{
     text-align: left;
+  }
+}
+
+@media screen and (min-width:1400px){
+  .hero__moon{
+    right: 13%;
+    transform: translateY(-120%);
   }
 }

@@ -1,0 +1,53 @@
+.floats__wrapper{
+  display: none;
+}
+
+
+@media screen and (min-width:768px){
+  .floats__wrapper{
+    display: block;
+  }
+      
+  .floats__social{
+    position: fixed;
+    bottom: 0;
+    left: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 1;
+  }
+
+  .floats__social svg{
+    font-size: 22px;
+  }
+
+  .floats__line{
+    height: 12rem;
+    width: 2px;
+    border-radius: 8px;
+    background:var(--clr-primary400);
+    opacity: 0.5;
+  }
+
+  .floats__email{
+    position: fixed;
+    bottom: 0;
+    right: -3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 1;
+  }
+
+  .floats__email a{
+    transform: rotate(90deg) translateX(-100px);
+    letter-spacing: 2px;
+  }
+}
+
+

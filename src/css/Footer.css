@@ -3,12 +3,32 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.footer__wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+  gap: 10px;
+}
+
+.footer__socials{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer__socials svg{
+  font-size: var(--fs-s);
 }
 
 footer p{
   text-align: center;
   margin: 0;
-  padding: 0.5rem 1rem;
   line-height:1.4rem;
 
 }
@@ -18,8 +38,10 @@ footer .highlight{
   color: var(--clr-primary400); 
 }
 
-@media screen and (min-width:768px){  
-  footer p{
-    padding: 1rem 2rem;
+@media screen and (min-width:768px){ 
+
+  .footer__socials{
+    display: none;
   }
+
 }

@@ -11,8 +11,7 @@ import { About } from '../constants/About';
 
 // Icons import
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCopy } from '@fortawesome/free-solid-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faCopy, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 // Images import
 import moon1 from "../assets/hero/moon-1.png";
@@ -27,38 +26,45 @@ import mountain from '../assets/hero/mountain-layer.png'
 import '../css/Home.css'
 import '../animations/Stars.css'
 
-export default function Home() {
+// Utils import
+import { Reveal } from '../utils/Reveal';
 
+export default function Home() {
   return (
     <main>
       <section className="hero">
         <div className="hero__wrapper">
           <div className="hero__content container">
-            <small className="hero__subtitle">
-              Frontend Developer
-            </small>
+            <Reveal>
+              <small className="hero__subtitle">
+                Frontend Developer
+              </small>
+            </Reveal>
 
-            <h1 className="hero__title">
-              Mark Lagarta
-            </h1>
+            <Reveal>
+              <h1 className="hero__title">
+                Mark Lagarta
+              </h1>
+            </Reveal>
 
-            <p className="hero__caption">
-              Crafting beautiful sites that people will remember
-            </p>
-            <div className="hero__cta-wrapper">
-              <Button
-                class='hero__cta cta'
-                name="View My Works"
-                // onClick={}
-                icon={<FontAwesomeIcon icon={faCopy} />}
-              />
+            <Reveal>
+              <p className="hero__caption">
+                Crafting beautiful sites that people will remember
+              </p>
+            </Reveal>
 
-              <Button
-                class='hero__cta cta secondary'
-                name="Explore My Resume"
-                // onClick={}
-              />
-            </div>
+            <Reveal>
+              <div className="hero__cta-wrapper">
+                <Button
+                  class='hero__cta cta'
+                  name="View My Works"
+                  url='projects'
+                  icon={<FontAwesomeIcon icon={faCopy} />}
+                />
+
+                <a href='' className='hero__cta cta secondary' aria-label="Explore My Resume">Explore My Resume</a>
+              </div>
+            </Reveal>
           </div>
 
           <div className="hero__background">
@@ -85,50 +91,60 @@ export default function Home() {
       </section>
 
 
-      <section className="exp">
+      <section className="exp" id='experience'>
         <div className="exp__wrapper container">
-          <h4 className='section-header'>
-             <span className="sublight">01.</span> 
-             <span className='section__title'>Where I've Worked</span>
-          </h4>
+          <Reveal>
+            <h4 className='section-header'>
+              <span className="sublight">01.</span> 
+              <span className='section__title'>Where I've Worked</span>
+            </h4>
+          </Reveal>
 
           <div className='exp__content'>
-            <div className="exp__caption">
-              <h6 className="exp__title">
-                Frontend Developer <span className="highlight">@Webshop Manager</span>
-              </h6>
-              <small className="exp__subtitle">2022-2024</small>
-            </div>
+            <Reveal>
+              <div className="exp__caption">
+                <h6 className="exp__title">
+                  Frontend Developer <span className="highlight">@Webshop Manager</span>
+                </h6>
+                <small className="exp__subtitle">2022-2024</small>
+              </div>
+            </Reveal>
 
-            <div className="exp__cards">
-              {Experience.map((exp) => {
-                return(
-                  <SmallCard 
-                    section='exp'
-                    key={exp.name}
-                    stats={exp.stats}
-                    icon={exp.icon}
-                    desc={exp.desc}
-                  />
-                )
-              })}
-            </div>
+            
+              <div className="exp__cards">
+                {Experience.map((exp) => {
+                  return(
+                    <Reveal>
+                      <SmallCard 
+                        section='exp'
+                        key={exp.name}
+                        stats={exp.stats}
+                        icon={exp.icon}
+                        desc={exp.desc}
+                      />
+                    </Reveal>
+                  )
+                })}
+              </div>
           </div>
         </div>
       </section>
 
-      <section className="projects">
+      <section className="projects" id='projects'>
         <div className="projects__wrapper container">
-          <h4 className='section-header'>
-             <span className="sublight">02.</span> 
-             <span className='section__title'>Some Things I've Built</span>
-          </h4>
+          <Reveal>
+            <h4 className='section-header'>
+              <span className="sublight">02.</span> 
+              <span className='section__title'>Some Things I've Built</span>
+            </h4>
+          </Reveal>
+
 
           <div className="projects__cards">
               {Projects.map((project) => {
                 return(
                   <LargeCard 
-                    key={project.name}
+                    key={project.name}  
                     section={project.section}
                     name={project.name}
                     thumbnail={project.thumbnail}
@@ -144,58 +160,81 @@ export default function Home() {
       </section>
 
 
-      <section className="about">
+      <section className="about" id='about'>
         <div className="about__wrapper container">
-          <h4 className='section-header'>
-             <span className="sublight">03.</span> 
-             <span className='section__title'>About Me</span>
-          </h4>
+          <Reveal>
+            <h4 className='section-header'>
+              <span className="sublight">03.</span> 
+              <span className='section__title'>About Me</span>
+            </h4>
+          </Reveal>
 
           {About.map((me) => {
             return(         
               <div key={me.name} className="about__content">
-                <div className="about__image">
-                  <img src={me.image} alt={me.name} />
-                </div>
-
-                <div className="about__info">
-                  <h4><span className="highlight">Hello</span>, I'm {me.name}</h4>
-                  <p>{me.desc1}</p>
-                  <p>{me.desc2}</p>
-                  <small>I'm currently working on the following technologies</small> <br />
-                  <div className="stack-wrapper">
-                    {me.stack.map((tech) => {
-                      return(
-                        <StackCard key={tech} tech={tech}/>
-                      )
-                    })}
+                <Reveal>
+                  <div className="about__image">
+                    <img src={me.image} alt={me.name} />
                   </div>
-                </div>
+                </Reveal>
+
+
+                  <div className="about__info">
+                    <Reveal>
+                     <h4><span className="highlight">Hello</span>, I'm {me.name}</h4>
+                    </Reveal>
+
+                    <Reveal>
+                      <p>{me.desc1}</p>
+                    </Reveal>
+
+                    <Reveal>
+                      <p>{me.desc2}</p>
+                    </Reveal>
+                    <Reveal>
+                      <small>I'm currently working on the following technologies</small> <br />
+                    </Reveal>
+
+                    <div className="stack-wrapper">
+                      {me.stack.map((tech) => {
+                        return(
+                          <Reveal padding='0.5rem 0'>
+                            <StackCard key={tech} tech={tech}/>
+                          </Reveal>
+                        )
+                      })}
+                    </div>
+                  </div>
+
               </div>
             )
           })}
         </div>
       </section>
 
-      <section className="contact">
+      <section className="contact" id='contact'>
         <div className="contact__wrapper container">
-          <h4 className='section-header'>
-             <span className="sublight">04.</span> 
-             <span className='section__title'>What's Next?</span>
-          </h4>
+          <Reveal>
+            <h4 className='section-header'>
+              <span className="sublight">04.</span> 
+              <span className='section__title'>What's Next?</span>
+            </h4>
+          </Reveal>
 
-          <article className="contact__info">
-            <h5>Get In Touch</h5>
-            <p>I am eager to embrace new challenges and currently seeking an opportunity to contribute my skills.</p>
-            <p>I am particularly passionate about React web development and excited to explore roles in this field.</p>
+          <Reveal>
+            <article className="contact__info">
+              <h5>Get In Touch</h5>
+              <p>I am eager to embrace new challenges and currently seeking an opportunity to contribute my skills.</p>
+              <p>I am particularly passionate about React web development and excited to explore roles in this field.</p>
 
-            <Button
-                class='hero__cta cta'
-                name="View My Works"
-                // onClick={}
-                icon={<FontAwesomeIcon icon={faEnvelope} />}
-            />
-          </article>
+              <Button
+                  class='hero__cta cta'
+                  name="Say Hello"
+                  // onClick={}
+                  icon={<FontAwesomeIcon icon={faEnvelope} />}
+              />
+            </article>
+          </Reveal>
         </div>
       </section>
     </main>
