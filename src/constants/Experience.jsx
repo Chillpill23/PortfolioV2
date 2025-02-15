@@ -15,10 +15,10 @@ export const Experience = [
     icon:''
   },
   {
-    name:'integrations',
+    name:'communication',
     stats:0,
-    desc:'Spearheaded integration with key third-party services reusable code for efficient deployment.',
-    icon: <FontAwesomeIcon icon={faLaptopCode} />
+    desc:'Provided client communication and step-by-step CMS training.',
+    icon:<FontAwesomeIcon icon={faComments} />
   },
   {
     name:'documentation',
@@ -27,15 +27,15 @@ export const Experience = [
     icon:<FontAwesomeIcon icon={faProjectDiagram} />
   },
   {
-    name:'communication',
-    stats:0,
-    desc:'Provided client communication and step-by-step CMS training.',
-    icon:<FontAwesomeIcon icon={faComments} />
-  },
-  {
     name:'UI/UX',
     stats:0,
     desc:'Redesigned the company\'s core website template, improving UI/UX and Core Web Vitals scores.',
     icon:<FontAwesomeIcon icon={faPalette} />
-  }
+  },
+  {
+    name:'integrations',
+    stats:0,
+    desc:'Spearheaded integration with key third-party services reusable code for efficient deployment.',
+    icon: <FontAwesomeIcon icon={faLaptopCode} />
+  },
 ]
