@@ -7,9 +7,9 @@
   --fs-s:clamp(1.25rem, 2.5vw, 1.563rem); /*20 - 25px */
   --fs-xs:clamp(1rem, 2vw, 1.1rem); /*16 - 18px */
 
-  --fs-body:clamp(1rem, 1.5vw, 1.2rem); /* 16 - 19px */
+  --fs-body:clamp(1rem, 1.5vw, 1.1rem); /* 16 - 19px */
   --fs-sub:clamp(0.9rem, 1.2vw, 1.05rem); /* 14 - 17px */
-  --fs-hints:clamp(0.5rem, 1vw, 0.74rem); /* 8 - 11px */
+  --fs-hints:clamp(0.8rem, 1.5vw, 0.9rem); /* 10 - 14px */
 
   /* Font Family */
   --ff-main:"Montserrat", serif;
@@ -17,7 +17,8 @@
 
   /* Colors */
   --clr-primary:#8623FF;
-  --clr-primary900:#691acb;
+  --clr-primarydark:#310e5d;
+  --clr-primary900:#5c17af;
   --clr-primary400:#D8B6FF;
   --clr-primary200:#ECDAFF;
   --clr-primary100:#F6EDFF;
@@ -30,7 +31,7 @@
 
   --clr-neutral:#FFFFFF;
   --clr-neutral200:#F5F1F7;
-  --clr-neutral400:#D7D7D7;
+  --clr-neutral400:#b7b7b7;
   --clr-neutral500:#8f8e8e;
   --clr-neutral600:#4E4E51;
   --clr-neutral700:#3D3D3E;
@@ -93,6 +94,7 @@ h6 {
 
 p {
   font-size: var(--fs-body);
+  line-height:1.8rem;
 }
 
 small {
@@ -105,7 +107,8 @@ small {
 }
 
 .container{
-  max-width: 1300px;
+  max-width: 1250px;
+  width: 100%;
 }
 
 section{
@@ -118,7 +121,7 @@ section{
 }
 
 .section-header{
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
   position: relative;
   font-family: var(--ff-main);
 }
@@ -132,16 +135,21 @@ section{
   color:var(--clr-neutral400);
   font-weight: 600;
   padding:0.5rem 0.6rem;
-  border: 0;
   border-radius: 4px;
   margin: 1rem 0;
   display: flex;
   gap: 8px;
+  border:2px solid var(--clr-primarydark)
 }
+
 
 .cta.secondary{
   background: transparent;
   border: none;
+}
+
+.cta span,.cta svg path{
+  color:var(--clr-primary200)
 }
 
 .cta.secondary span{
@@ -161,9 +169,36 @@ section{
   font-family: var(--ff-body);
   font-size: var(--fs-body);
   font-weight: 500;
+  margin-right: 5px;
+}
+
+img{
+  object-fit: contain;
+}
+
+.stack-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1rem ;
+  margin-top: 2rem;
+}
+
+.stack__card{
+  background: var(--clr-primarydark);
+  padding:0.4rem 0.8rem;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--clr-primary400);
+  font-size: var(--fs-hints);
+  text-align: center;
 }
 
 @media screen and (min-width:768px) {
+  
+  section{
+    margin:180px 0;
+  }
+
   .section-header span:nth-child(2):after{
     content:"";
     position: absolute;
@@ -176,4 +211,10 @@ section{
     opacity: 0.7;
     border-radius: 50%;
   }
+
+  .cta{
+    padding:0.5rem 1rem;
+    border:2px solid var(--clr-primarydark)
+  }
+  
 }

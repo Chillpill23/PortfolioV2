@@ -1,0 +1,25 @@
+footer{
+  background: var(--clr-neutral700);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p{
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  line-height:1.4rem;
+
+}
+
+footer .highlight{
+  font-weight: 600;
+  color: var(--clr-primary400); 
+}
+
+@media screen and (min-width:768px){  
+  footer p{
+    padding: 1rem 2rem;
+  }
+}

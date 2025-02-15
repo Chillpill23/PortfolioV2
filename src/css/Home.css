@@ -43,7 +43,7 @@
   overflow: hidden;
   background-image:url('../assets/hero/hero-bg.png');
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
 }
 
 .hero__wolf{
@@ -109,6 +109,59 @@
   font-size: var(--fs-sub);
 }
 
+/* Projects section */
+.projects__cards{
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+}
+
+.projects__lCard{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0 1rem;
+}
+
+.lCard__subtitle{
+  color:var(--clr-secondary200);
+  font-weight: 400;
+}
+
+.lCard__image img{
+  width: 100%;
+  border-radius: 8px;
+}
+
+
+/* About */
+.about__image {
+  display: none;
+}
+
+.about__image img{
+ width: 40%;
+}
+
+.about__content .stack-wrapper{
+  display: flex;
+  margin-top:2rem;
+}
+
+.contact__wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.contact__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 @media screen and (min-width:768px){
   .hero__content{
     position: absolute;
@@ -117,6 +170,7 @@
 
   .hero__background{
     position: static;
+    background-size: 100% auto;
   }
 
   .hero__wolf{
@@ -183,6 +237,72 @@
 
   .sCard__content{
     padding: 0.2rem 0.5rem;
+  }
+
+  /* Projects */
+
+  .projects__lCard{
+    grid-template-columns: 48% 48%;
+  }
+
+  .projects__lCard:nth-child(odd) .lCard__wrapper{
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .projects__lCard:nth-child(even) .lCard__wrapper{
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+  }
+
+  .projects__lCard:nth-child(odd) .lCard__image{
+    grid-column: 2;
+    grid-row: 1/span 2;
+  }
+
+  .projects__lCard:nth-child(even) .lCard__image{
+    grid-column: 1;
+    grid-row: 1/span 2;
+  }
+
+  .projects__lCard:nth-child(odd) .lCard__info{
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .projects__lCard:nth-child(even) .lCard__info{
+    grid-column: 2;
+    grid-row: 2;
+    text-align: right;
+  }
+
+  .projects__lCard:nth-child(even) .lCard__stack{
+    justify-content: flex-end;
+  }
+
+  /* About */
+
+  .about__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about__content{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about__content > *{
+    flex:6;
+  }
+
+  /* Contact */
+  .contact__wrapper p{
+    width: 60%;
   }
 }
 
