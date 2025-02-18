@@ -1,5 +1,6 @@
 {
   "name": "portfoliov2",
+  "home": "htttps://Chillpill23.github.io/Portfoliov2/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,9 @@
     "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -16,6 +19,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "framer-motion": "^12.4.3",
+    "gh-pages": "^6.3.0",
     "motion": "^12.4.3",
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
