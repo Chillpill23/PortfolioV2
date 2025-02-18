@@ -34,7 +34,7 @@ function Header() {
               )
             })}
 
-            <a href="/Lagarta-Resume.pdf" target='_blank' rel="noopener noreferrer" title="Explore my Resume">Resume</a>
+            <a href="/PortfolioV2/Lagarta-Resume.pdf" target='_blank' rel="noopener noreferrer" title="Explore my Resume">Resume</a>
           </ul>
         </nav>
         <FontAwesomeIcon icon={faBarsStaggered} onClick={()=> {setIsOpen(!isOpen)}} className='header__mobile' />
