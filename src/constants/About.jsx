@@ -1,4 +1,4 @@
-import aboutImage from '../assets/about/about.png'
+import aboutImage from '../assets/about/about.webp'
 export const About = [
   {
     image:aboutImage,
