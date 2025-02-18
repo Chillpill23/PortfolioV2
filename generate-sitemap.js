@@ -1,4 +1,4 @@
-const fs = require("fs");
+import fs from "fs";
 
 const siteUrl = "https://Chillpill23.github.io/PortfolioV2/";
 const lastMod = new Date().toISOString().split("T")[0]; // YYYY-MM-DD format

@@ -1,4 +1,5 @@
 import thumbWcm from '../assets/projects/wcm/wcm-thumb.webp'
+import thumbWcmDesktop from '../assets/projects/wcm/wcm-thumb-d.webp'
 import wcm1 from '../assets/projects/wcm/wcm-hero.webp'
 import wcm2 from '../assets/projects/wcm/wcm-s2.webp'
 import wcm3 from '../assets/projects/wcm/wcm-s3.webp'
@@ -8,6 +9,7 @@ import wcm6 from '../assets/projects/wcm/wcm-s6.webp'
 import wcm7 from '../assets/projects/wcm/wcm-s7.webp'
 
 import thumbEz from '../assets/projects/ez/ez-thumb.webp'
+import thumbEzDesktop from '../assets/projects/ez/ez-thumb-d.webp'
 import ez1 from '../assets/projects/ez/ez-hero.webp'
 import ez2 from '../assets/projects/ez/ez-s2.webp'
 import ez3 from '../assets/projects/ez/ez-s3.webp'
@@ -26,6 +28,7 @@ export const Projects = [
   {
     section:'projects',
     thumbnail:thumbEz,
+    thumbnailDesktop:thumbEzDesktop,
     images:[ez1, ez2, ez3, ez4, ez5, ez6, ez7, ez8, ez9, ez10, ez11],
     name:"Ez Oil Drain Valve",
     desc1:"I engineered an e-commerce solution for an oil drain valve manufacturer. ",
@@ -35,6 +38,7 @@ export const Projects = [
   {
     section:'projects',
     thumbnail:thumbWcm,
+    thumbnailDesktop:thumbWcmDesktop,
     images:[wcm1, wcm2, wcm3, wcm4, wcm5, wcm6, wcm7],
     name:"Westcoast Metric",
     desc1:"An e-commerce website specializing in Volkswagen automotive parts.",

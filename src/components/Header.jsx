@@ -24,6 +24,7 @@ function Header() {
                 <li key={link.name}>
                     <a title={link.title} 
                      className='header__link' 
+                     url={link.url}
                      onClick={(e) => {
                       e.preventDefault();
                       setIsOpen(!isOpen)
@@ -34,7 +35,9 @@ function Header() {
               )
             })}
 
-            <a href="/PortfolioV2/Lagarta-Resume.pdf" target='_blank' rel="noopener noreferrer" title="Explore my Resume">Resume</a>
+            <li>
+              <a href="/PortfolioV2/Lagarta-Resume.pdf" target='_blank' rel="noopener noreferrer" title="Explore my Resume">Resume</a>
+            </li>
           </ul>
         </nav>
         <FontAwesomeIcon icon={faBarsStaggered} onClick={()=> {setIsOpen(!isOpen)}} className='header__mobile' />
