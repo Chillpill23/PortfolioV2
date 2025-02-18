@@ -17,7 +17,7 @@ export const Reveal = ({children, width="fit-content", padding, height, gridColu
   },[isInview])
 
   return (
-    <div ref={ref} style={{ position: "relative", width, overflow:"hidden", height, gridColumn, gridRow}}>
+    <div ref={ref}  style={{ position: "relative", width, overflow:"hidden", height, gridColumn, gridRow}}>
       <motion.div
         variants={{
           hidden: {opacity: 0, y:75},
@@ -25,7 +25,11 @@ export const Reveal = ({children, width="fit-content", padding, height, gridColu
         }}
         initial='hidden'
         animate={mainControls}
-        transition={{duration: 0.5, delay: 0.25, ease: "easeInOut"}}
+        transition={{
+          duration: 0.5, 
+          delay: 0.25,
+          ease: "easeInOut", 
+        }}
       >{children}
       </motion.div>
       <motion.div

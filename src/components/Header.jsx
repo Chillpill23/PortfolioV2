@@ -17,7 +17,7 @@ function Header() {
     <header>
       <div className="header__wrapper container">
         <img className='header__logo' src={Logo} alt="ML Logo" />
-        <nav className={isOpen ? 'open' : null }>
+        <nav className={`${isOpen ? 'open' : null}`}>
           <ul>
             {MainLinks.map((link,index) => {
               return(
@@ -34,7 +34,7 @@ function Header() {
               )
             })}
 
-            <a href="" title="Explore my Resume">Resume</a>
+            <a href="../assets/Lagarta-Resume.pdf" target='_blank' title="Explore my Resume">Resume</a>
           </ul>
         </nav>
         <FontAwesomeIcon icon={faBarsStaggered} onClick={()=> {setIsOpen(!isOpen)}} className='header__mobile' />
