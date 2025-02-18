@@ -1,8 +1,11 @@
+import { useState } from 'react';
+
 // Components import
 import Button from '../components/Button'
 import SmallCard from '../components/SmallCard';
 import LargeCard from '../components/LargeCard';
 import StackCard from '../components/StackCard';
+import Modal from '../components/Modal';
 
 // Constants import
 import { Experience } from '../constants/Experience';
@@ -14,13 +17,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 // Images import
-import moon1 from "../assets/hero/moon-1.png";
-import moon2 from "../assets/hero/moon-2.png";
-import moon3 from "../assets/hero/moon-3.png";
-import moon4 from "../assets/hero/moon-4.png";
-import moon5 from "../assets/hero/moon-5.png";
-import wolf from '../assets/hero/wolf-layer.png'
-import mountain from '../assets/hero/mountain-layer.png'
+import moon1 from "../assets/hero/moon-1.webp";
+import moon2 from "../assets/hero/moon-2.webp";
+import moon3 from "../assets/hero/moon-3.webp";
+import moon4 from "../assets/hero/moon-4.webp";
+import moon5 from "../assets/hero/moon-5.webp";
+import wolf from '../assets/hero/wolf-layer.webp'
+import mountain from '../assets/hero/mountain-layer.webp'
 
 // Styles import
 import '../css/Home.css'
@@ -30,11 +33,14 @@ import '../animations/Stars.css'
 import { Reveal } from '../utils/Reveal';
 
 export default function Home() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   return (
     <main>
       <section className="hero">
         <div className="hero__wrapper">
           <div className="hero__content container">
+
             <Reveal>
               <small className="hero__subtitle">
                 Frontend Developer
@@ -114,10 +120,9 @@ export default function Home() {
               <div className="exp__cards">
                 {Experience.map((exp) => {
                   return(
-                    <Reveal>
+                    <Reveal key={exp.name}>
                       <SmallCard 
                         section='exp'
-                        key={exp.name}
                         stats={exp.stats}
                         icon={exp.icon}
                         desc={exp.desc}
@@ -152,10 +157,13 @@ export default function Home() {
                     desc2={project.desc2}
                     stack={project.stack}
                     images={project.images}
+                    onClick={() => {setSelectedProject(project)}}
                   />
                 )
               })}
           </div>
+
+          <Modal project={selectedProject} onClose={() => setSelectedProject(null)}/>
         </div>
       </section>
 
@@ -198,8 +206,8 @@ export default function Home() {
                     <div className="stack-wrapper">
                       {me.stack.map((tech) => {
                         return(
-                          <Reveal padding='0.5rem 0'>
-                            <StackCard key={tech} tech={tech}/>
+                          <Reveal padding='0.5rem 0' key={tech} >
+                            <StackCard tech={tech}/>
                           </Reveal>
                         )
                       })}
@@ -227,12 +235,7 @@ export default function Home() {
               <p>I am eager to embrace new challenges and currently seeking an opportunity to contribute my skills.</p>
               <p>I am particularly passionate about React web development and excited to explore roles in this field.</p>
 
-              <Button
-                  class='hero__cta cta'
-                  name="Say Hello"
-                  // onClick={}
-                  icon={<FontAwesomeIcon icon={faEnvelope} />}
-              />
+              <a href='mailto:mj.lagarta@gmail.com' className='hero__cta cta' aria-label="Say Hello"><FontAwesomeIcon icon={faEnvelope} />Say hello</a>
             </article>
           </Reveal>
         </div>

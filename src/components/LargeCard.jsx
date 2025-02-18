@@ -1,7 +1,9 @@
 import StackCard from "./StackCard"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faEye } from "@fortawesome/free-solid-svg-icons"
 import { Reveal } from "../utils/Reveal"
 
-function LargeCard({section, name, thumbnail, images, desc1, desc2, stack}) {
+function LargeCard({section, name, thumbnail, images, desc1, desc2, stack, onClick}) {
   return (
     <article className={`${section}__lCard`}>
         <div className="lCard__wrapper">
@@ -11,9 +13,9 @@ function LargeCard({section, name, thumbnail, images, desc1, desc2, stack}) {
           </Reveal> 
         </div>
 
-        <picture className="lCard__image">
-          <source srcSet={thumbnail} media='(min-width:768px)'/>
-          <img src={thumbnail} alt={`${name} thumbnail`}/>
+        <picture className="lCard__image" onClick={onClick}>
+          <source className='springy' srcSet={thumbnail} media='(min-width:768px)'/>
+          <img loading='lazy' className='springy' src={thumbnail} alt={`${name} thumbnail`}/>
         </picture>
 
         <div className="lCard__info">
@@ -28,15 +30,17 @@ function LargeCard({section, name, thumbnail, images, desc1, desc2, stack}) {
           <div className="lCard__stack stack-wrapper">
             {stack.map((tech) => {
               return(
-                <Reveal padding='0.5rem 0'>
+                <Reveal padding='0.5rem 0' key={tech}>
                   <StackCard 
-                    key={tech}
+                    
                     tech={tech}
                   />
                 </Reveal>
               )
             })}
           </div>
+
+          <button className='cta secondary lCard__cta' role='button' aria-label='View site snapshots' onClick={onClick}><FontAwesomeIcon icon={faEye} />View site snapshots</button>
         </div>
     </article>
   )
