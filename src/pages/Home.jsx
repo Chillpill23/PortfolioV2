@@ -31,6 +31,7 @@ import '../animations/Stars.css'
 
 // Utils import
 import { Reveal } from '../utils/Reveal';
+import ScrollToTop from '../utils/ScrollToTop';
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -68,7 +69,7 @@ export default function Home() {
                   icon={<FontAwesomeIcon icon={faCopy} />}
                 />
 
-                <a href='' className='hero__cta cta secondary' aria-label="Explore My Resume">Explore My Resume</a>
+                <a href="/PortfolioV2/Lagarta-Resume.pdf" target='_blank' rel="noopener noreferrer" className='hero__cta cta secondary' aria-label="Explore My Resume">Explore My Resume</a>
               </div>
             </Reveal>
           </div>
@@ -237,6 +238,8 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      <ScrollToTop />
     </main>
   )
 }
