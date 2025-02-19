@@ -1,4 +1,3 @@
-import '../css/Button.css'
 import { Scroll } from '../utils/Scroll'
 
 function Button(props) {
