@@ -14,7 +14,7 @@ import { About } from '../constants/About';
 
 // Icons import
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCopy, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faCopy, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 
 // Images import
 import moon1 from "../assets/hero/moon-1.webp";
@@ -163,7 +163,7 @@ export default function Home() {
                 <h6 className="exp__title">
                   Frontend Developer <span className="highlight">@Webshop Manager</span>
                 </h6>
-                <small className="exp__subtitle">2022-2024</small>
+                <small className="exp__subtitle">2022-2024 - <FontAwesomeIcon icon={faMapMarkerAlt} /> San Diego, CA (Remote)</small>
               </div>
             </Reveal>
 
