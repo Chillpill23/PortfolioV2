@@ -6,7 +6,7 @@ import { faBarsStaggered, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 import { MainLinks } from '../constants/Navlinks'
 
-import Logo from '../assets/Logo-1.png'
+import logo from '../assets/Logo-1.png'
 import '../css/Header.css'
 
 function Header() {
@@ -16,7 +16,7 @@ function Header() {
   return (
     <header>
       <div className="header__wrapper container">
-        <img className='header__logo' src={Logo} alt="ML Logo" />
+        <img className='header__logo' src={logo} alt="ML Logo" />
         <nav className={`${isOpen ? 'open' : null}`}>
           <ul>
             {MainLinks.map((link,index) => {
