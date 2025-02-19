@@ -1,5 +1,10 @@
 export const MainLinks = [
   {
+    name:'About',
+    url:'about',
+    title:'Get to Know me'
+  },
+  {
     name:'Experience',
     url:'experience',
     title:'Where I\'ve worked'
@@ -8,11 +13,6 @@ export const MainLinks = [
     name:'Projects',
     url:'projects',
     title:'Things I\'ve built'
-  },
-  {
-    name:'About',
-    url:'about',
-    title:'Get to Know me'
   },
   {
     name:'Contact',

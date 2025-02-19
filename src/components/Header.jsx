@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Scroll } from '../utils/Scroll'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBarsStaggered } from '@fortawesome/free-solid-svg-icons'
+import { faBarsStaggered, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 import { MainLinks } from '../constants/Navlinks'
 
@@ -11,7 +11,7 @@ import '../css/Header.css'
 
 function Header() {
 
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header>
@@ -36,11 +36,18 @@ function Header() {
             })}
 
             <li>
-              <a href="/PortfolioV2/Lagarta-Resume.pdf" target='_blank' rel="noopener noreferrer" title="Explore my Resume">Resume</a>
+              <a className='cta secondary resume' href="/PortfolioV2/Lagarta-Resume.pdf" target='_blank' rel="noopener noreferrer" title="Explore my Resume">Resume</a>
             </li>
           </ul>
         </nav>
-        <FontAwesomeIcon icon={faBarsStaggered} onClick={()=> {setIsOpen(!isOpen)}} className='header__mobile' />
+        {/* <FontAwesomeIcon icon={isOpen ? faXmark : faBarsStaggered } onClick={()=> {setIsOpen(!isOpen)}} className={`${isOpen ? 'close' : 'open' } header__mobile`}/> */}
+        <div
+          className={`header__mobile ${isOpen ? 'open' : 'close'}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <FontAwesomeIcon icon={faBarsStaggered} className="icon bars" />
+          <FontAwesomeIcon icon={faXmark} className="icon xmark" />
+        </div>
       </div>
     </header>
   )
