@@ -1,14 +1,14 @@
 import CountUp from 'react-countup';
 
-function SmallCard({section,stats = 1, icon, desc}) {
+function SmallCard({section,stats, icon, desc}) {
   return (
     <div className={`${section}__sCard`}>
       <div className="sCard__visual">
-        {stats !== 0 && 
+        {stats > 0 && 
           <span>
             <CountUp 
              start={0} 
-             end={stats}
+             end={stats ? stats : 0}
              duration={2.5}
              enableScrollSpy = {true}
              scrollSpyOnce = {true}

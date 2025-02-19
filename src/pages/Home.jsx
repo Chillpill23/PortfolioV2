@@ -96,83 +96,11 @@ export default function Home() {
         </div>
       </section>
 
-
-      <section className="exp" id='experience'>
-        <div className="exp__wrapper container">
-          <Reveal>
-            <h4 className='section-header'>
-              <span className="sublight">01.</span> 
-              <span className='section__title'>Where I've Worked</span>
-            </h4>
-          </Reveal>
-
-          <div className='exp__content'>
-            <Reveal>
-              <div className="exp__caption">
-                <h6 className="exp__title">
-                  Frontend Developer <span className="highlight">@Webshop Manager</span>
-                </h6>
-                <small className="exp__subtitle">2022-2024</small>
-              </div>
-            </Reveal>
-
-            
-              <div className="exp__cards">
-                {Experience.map((exp) => {
-                  return(
-                    <Reveal key={exp.name}>
-                      <SmallCard 
-                        section='exp'
-                        stats={exp.stats}
-                        icon={exp.icon}
-                        desc={exp.desc}
-                      />
-                    </Reveal>
-                  )
-                })}
-              </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="projects" id='projects'>
-        <div className="projects__wrapper container">
-          <Reveal>
-            <h4 className='section-header'>
-              <span className="sublight">02.</span> 
-              <span className='section__title'>Some Things I've Built</span>
-            </h4>
-          </Reveal>
-
-
-          <div className="projects__cards">
-              {Projects.map((project) => {
-                return(
-                  <LargeCard 
-                    key={project.name}  
-                    section={project.section}
-                    name={project.name}
-                    thumbnail={project.thumbnail}
-                    desc1={project.desc1}
-                    desc2={project.desc2}
-                    stack={project.stack}
-                    images={project.images}
-                    onClick={() => {setSelectedProject(project)}}
-                  />
-                )
-              })}
-          </div>
-
-          <Modal project={selectedProject} onClose={() => setSelectedProject(null)}/>
-        </div>
-      </section>
-
-
       <section className="about" id='about'>
         <div className="about__wrapper container">
           <Reveal>
             <h4 className='section-header'>
-              <span className="sublight">03.</span> 
+              <span className="sublight">01.</span> 
               <span className='section__title'>About Me</span>
             </h4>
           </Reveal>
@@ -182,7 +110,7 @@ export default function Home() {
               <div key={me.name} className="about__content">
                 <Reveal>
                   <div className="about__image">
-                    <img src={me.image} alt={me.name} />
+                    <img loading='lazy' src={me.image} alt={me.name} />
                   </div>
                 </Reveal>
 
@@ -220,11 +148,80 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="exp" id='experience'>
+        <div className="exp__wrapper container">
+          <Reveal>
+            <h4 className='section-header'>
+              <span className="sublight">02.</span> 
+              <span className='section__title'>Where I've Worked</span>
+            </h4>
+          </Reveal>
+
+          <div className='exp__content'>
+            <Reveal>
+              <div className="exp__caption">
+                <h6 className="exp__title">
+                  Frontend Developer <span className="highlight">@Webshop Manager</span>
+                </h6>
+                <small className="exp__subtitle">2022-2024</small>
+              </div>
+            </Reveal>
+
+            
+              <div className="exp__cards">
+                {Experience.map((exp) => {
+                  return(
+                    <Reveal key={exp.name}>
+                      <SmallCard 
+                        section='exp'
+                        stats={exp.stats}
+                        icon={exp.icon}
+                        desc={exp.desc}
+                      />
+                    </Reveal>
+                  )
+                })}
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="projects" id='projects'>
+        <div className="projects__wrapper container">
+          <Reveal>
+            <h4 className='section-header'>
+              <span className="sublight">03.</span> 
+              <span className='section__title'>Some Things I've Built</span>
+            </h4>
+          </Reveal>
+
+
+          <div className="projects__cards">
+              {Projects.map((project) => {
+                return(
+                  <LargeCard 
+                    key={project.name}  
+                    section={project.section}
+                    name={project.name}
+                    thumbnail={project.thumbnail}
+                    desc1={project.desc1}
+                    desc2={project.desc2}
+                    stack={project.stack}
+                    images={project.images}
+                    onClick={() => {setSelectedProject(project)}}
+                  />
+                )
+              })}
+          </div>
+
+          <Modal project={selectedProject} onClose={() => setSelectedProject(null)}/>
+        </div>
+      </section>
+
       <section className="contact" id='contact'>
         <div className="contact__wrapper container">
           <Reveal>
             <h4 className='section-header'>
-              <span className="sublight">04.</span> 
               <span className='section__title'>What's Next?</span>
             </h4>
           </Reveal>

@@ -31,7 +31,7 @@ nav{
 
 nav.open{
   right: 0;
-  width: 80vw;
+  width: 100vw;
 } 
 
 nav ul{
@@ -60,10 +60,54 @@ nav a span{
   color: var(--clr-secondary200);
 }
 
+.cta.secondary.resume{
+  font-weight: 400;
+}
+
 .header__mobile{
   z-index: 10;
   font-size: 1.5rem;
 }
+
+.header__mobile {
+  position: relative;
+  display: inline-block;
+  width: 25px; /* adjust as needed */
+  height: 100%; /* adjust as needed */
+  cursor: pointer;
+}
+
+/* Position both icons on top of each other */
+.header__mobile .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* Default state: bars visible, xmark hidden */
+.header__mobile.close .bars {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.header__mobile.close .xmark {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+/* When open: bars fade out and rotate, xmark fades in */
+.header__mobile.open .bars {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.header__mobile.open .xmark {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
 
 @media screen and (min-width: 768px){
   nav{

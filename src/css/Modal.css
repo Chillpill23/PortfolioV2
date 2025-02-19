@@ -39,10 +39,20 @@
   padding:0.38rem 0.7rem;
   background:var(--clr-neutral600);
   border-radius: 50%;
+  transition: 0.2s ease all;
+  cursor: pointer;
 }
 
 .close-btn svg path{
   color: var(--clr-secondary400);
+}
+
+.close-btn:hover{
+  background-color: var(--clr-secondary400);
+}
+
+.close-btn:hover svg path{
+  color: var(--clr-neutral900);
 }
 
 
