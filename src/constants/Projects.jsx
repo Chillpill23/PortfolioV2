@@ -25,7 +25,7 @@ export const Projects = [
     name: "Klimate Weather App",
     desc1: "A weather forecast web application that showcases data fetched from Openweathermap.org",
     desc2: "This involved features such as 5-day weather forecasts, Weather details, Today's Temperature, Search Queries and histories, as well as Favorite cities.",
-    stack: ['React', 'Tailwind.css', 'Typescript', 'TanStack Query', 'Shadcn UI'],
+    stack: ['React', 'Tailwind.css', 'Typescript', 'TanStack Query', 'Shadcn UI', 'Vercel'],
     url:"https://klimate-mu.vercel.app/"
   },
   {
