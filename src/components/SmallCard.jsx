@@ -7,8 +7,9 @@ function SmallCard({section,stats, icon, desc}) {
         {stats > 0 && 
           <span>
             <CountUp 
+            key={stats}
              start={0} 
-             end={stats ? stats : 0}
+             end={stats ?? 0}
              duration={2.5}
              enableScrollSpy = {true}
              scrollSpyOnce = {true}

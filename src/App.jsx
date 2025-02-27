@@ -1,4 +1,3 @@
-import React from 'react'
 import './App.css'
 import Floats from './components/Floats'
 import Header from './components/Header'

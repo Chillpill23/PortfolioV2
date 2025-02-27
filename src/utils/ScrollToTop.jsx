@@ -13,7 +13,7 @@ export default function ScrollToTop()  {
 
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+  }, [isVisible]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

@@ -1,40 +1,34 @@
 import { useState } from 'react';
 
 // Components import
-import Button from '../components/Button'
-import SmallCard from '../components/SmallCard';
-import LargeCard from '../components/LargeCard';
-import StackCard from '../components/StackCard';
-import Modal from '../components/Modal';
+import { Button, SmallCard, LargeCard, StackCard, Modal } from '../components';
 
 // Constants import
-import { Experience } from '../constants/Experience';
-import { Projects } from '../constants/Projects';
-import { About } from '../constants/About';
+import { Experience, Projects, About } from '../constants';
 
 // Icons import
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
-
-// Images import
-import moon1 from "../assets/hero/moon-1.webp";
-import moon2 from "../assets/hero/moon-2.webp";
-import moon3 from "../assets/hero/moon-3.webp";
-import moon4 from "../assets/hero/moon-4.webp";
-import moon5 from "../assets/hero/moon-5.webp";
-import wolf from '../assets/hero/wolf-layer.webp'
-import mountain from '../assets/hero/mountain-layer.webp'
 
 // Styles import
 import '../css/Home.css'
 import '../animations/Stars.css'
 
 // Utils import
-import { Reveal } from '../utils/Reveal';
-import ScrollToTop from '../utils/ScrollToTop';
+import { Reveal, ScrollToTop } from '../utils';
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState(null);
+  
+  const images = import.meta.glob("../assets/hero/*.webp", { eager: true });
+
+  const wolf = images["../assets/hero/wolf-layer.webp"].default;
+  const mountain = images["../assets/hero/mountain-layer.webp"].default;
+
+  const moons = Object.keys(images)
+    .filter((key) => key.includes("moon"))
+    .sort() 
+    .map((key) => images[key].default);
 
   return (
     <main>
@@ -81,11 +75,9 @@ export default function Home() {
             </div>
 
             <div className="hero__moon">
-              <img src={moon1} alt="moon layer 1" />
-              <img src={moon2} alt="moon layer 1" />
-              <img src={moon3} alt="moon layer 1" />
-              <img src={moon4} alt="moon layer 1" />
-              <img src={moon5} alt="moon layer 1" />
+              {moons.map((src, index) => (
+                <img key={index} src={src} alt={`Moon layer ${index + 1}`} />
+              ))}
             </div>
 
             <div className="hero__shooting-stars">
@@ -118,7 +110,7 @@ export default function Home() {
 
                   <div className="about__info">
                     <Reveal>
-                     <h4><span className="highlight">Hello</span>, I'm {me.name}</h4>
+                     <h4><span className="highlight">Hello</span>, I&apos;m {me.name}</h4>
                     </Reveal>
 
                     <Reveal>
@@ -129,7 +121,7 @@ export default function Home() {
                       <p>{me.desc2}</p>
                     </Reveal>
                     <Reveal>
-                      <small>I'm currently working on the following technologies</small> <br />
+                      <small>I&apos;m currently working on the following technologies</small> <br />
                     </Reveal>
 
                     <div className="stack-wrapper">
@@ -154,7 +146,7 @@ export default function Home() {
           <Reveal>
             <h4 className='section-header'>
               <span className="sublight">02.</span> 
-              <span className='section__title'>Where I've Worked</span>
+              <span className='section__title'>Where I&apos;ve Worked</span>
             </h4>
           </Reveal>
 
@@ -192,7 +184,7 @@ export default function Home() {
           <Reveal>
             <h4 className='section-header'>
               <span className="sublight">03.</span> 
-              <span className='section__title'>Some Things I've Built</span>
+              <span className='section__title'>Some Things I&apos;ve Built</span>
             </h4>
           </Reveal>
 
@@ -201,7 +193,8 @@ export default function Home() {
               {Projects.map((project) => {
                 return(
                   <LargeCard 
-                    key={project.name}  
+                    key={project.name}
+                    category={project.category}
                     section={project.section}
                     name={project.name}
                     thumbnail={project.thumbnail}
@@ -210,6 +203,7 @@ export default function Home() {
                     stack={project.stack}
                     images={project.images}
                     onClick={() => {setSelectedProject(project)}}
+                    url={project.url}
                   />
                 )
               })}
@@ -223,7 +217,7 @@ export default function Home() {
         <div className="contact__wrapper container">
           <Reveal>
             <h4 className='section-header'>
-              <span className='section__title'>What's Next?</span>
+              <span className='section__title'>What&apos;s Next?</span>
             </h4>
           </Reveal>
 

@@ -1,48 +1,60 @@
-import thumbWcm from '../assets/projects/wcm/wcm-thumb.webp'
-import thumbWcmDesktop from '../assets/projects/wcm/wcm-thumb-d.webp'
-import wcm1 from '../assets/projects/wcm/wcm-hero.webp'
-import wcm2 from '../assets/projects/wcm/wcm-s2.webp'
-import wcm3 from '../assets/projects/wcm/wcm-s3.webp'
-import wcm4 from '../assets/projects/wcm/wcm-s4.webp'
-import wcm5 from '../assets/projects/wcm/wcm-s5.webp'
-import wcm6 from '../assets/projects/wcm/wcm-s6.webp'
-import wcm7 from '../assets/projects/wcm/wcm-s7.webp'
+const ezImages = import.meta.glob('../assets/projects/ez/*.webp', { eager: true, import: 'default' });
+const wcmImages = import.meta.glob('../assets/projects/wcm/*.webp', { eager: true, import: 'default' });
 
-import thumbEz from '../assets/projects/ez/ez-thumb.webp'
-import thumbEzDesktop from '../assets/projects/ez/ez-thumb-d.webp'
-import ez1 from '../assets/projects/ez/ez-hero.webp'
-import ez2 from '../assets/projects/ez/ez-s2.webp'
-import ez3 from '../assets/projects/ez/ez-s3.webp'
-import ez4 from '../assets/projects/ez/ez-s4.webp'
-import ez5 from '../assets/projects/ez/ez-s5.webp'
-import ez6 from '../assets/projects/ez/ez-s6.webp'
-import ez7 from '../assets/projects/ez/ez-s7.webp'
-import ez8 from '../assets/projects/ez/ez-s8.webp'
-import ez9 from '../assets/projects/ez/ez-s9.webp'
-import ez10 from '../assets/projects/ez/ez-s10.webp'
-import ez11 from '../assets/projects/ez/ez-s11.webp'
+// Convert import.meta.glob() output into an object for easier access
+const formatImages = (imageSet) => Object.fromEntries(
+  Object.entries(imageSet).map(([path, module]) => {
+    const fileName = path.split('/').pop().replace('.webp', '');
+    return [fileName, module];
+  })
+);
 
+// Processed image objects
+const ez = formatImages(ezImages);
+const wcm = formatImages(wcmImages);
 
+import klimateThumb from '../assets/projects/klimate/klimate-thumb.webp'
+import klimateThumbD from '../assets/projects/klimate/klimate-thumb-d.webp'
 
 export const Projects = [
   {
-    section:'projects',
-    thumbnail:thumbEz,
-    thumbnailDesktop:thumbEzDesktop,
-    images:[ez1, ez2, ez3, ez4, ez5, ez6, ez7, ez8, ez9, ez10, ez11],
-    name:"Ez Oil Drain Valve",
-    desc1:"I engineered an e-commerce solution for an oil drain valve manufacturer. ",
-    desc2:"This involved custom design implementation, feature development, and core web vital optimization to maximize performance and user engagement.",
-    stack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'PHP', 'JQuery']
+    category:'personal',
+    section: 'projects',
+    thumbnail: klimateThumb,
+    thumbnailDesktop:klimateThumbD,
+    name: "Klimate Weather App",
+    desc1: "A weather forecast web application that showcases data fetched from Openweathermap.org",
+    desc2: "This involved features such as 5-day weather forecasts, Weather details, Today's Temperature, Search Queries and histories, as well as Favorite cities.",
+    stack: ['React', 'Tailwind.css', 'Typescript', 'TanStack Query', 'Shadcn UI'],
+    url:"https://klimate-mu.vercel.app/"
   },
   {
-    section:'projects',
-    thumbnail:thumbWcm,
-    thumbnailDesktop:thumbWcmDesktop,
-    images:[wcm1, wcm2, wcm3, wcm4, wcm5, wcm6, wcm7],
-    name:"Westcoast Metric",
-    desc1:"An e-commerce website specializing in Volkswagen automotive parts.",
-    desc2:"The project involved implementing custom designs and features based on client specifications. I also optimized the site's coreweb vitals to improve user experience and drive conversions.",
-    stack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'PHP', 'JQuery']
+    category:'work',
+    section: 'projects',
+    thumbnail: ez['ez-thumb'],
+    thumbnailDesktop: ez['ez-thumb-d'],
+    images: [
+      ez['ez-hero'], ez['ez-s2'], ez['ez-s3'], ez['ez-s4'],
+      ez['ez-s5'], ez['ez-s6'], ez['ez-s7'], ez['ez-s8'],
+      ez['ez-s9'], ez['ez-s10'], ez['ez-s11']
+    ],
+    name: "Ez Oil Drain Valve",
+    desc1: "I engineered an e-commerce solution for an oil drain valve manufacturer.",
+    desc2: "This involved custom design implementation, feature development, and core web vital optimization to maximize performance and user engagement.",
+    stack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'PHP', 'JQuery'],
   },
-]
+  {
+    category:'work',
+    section: 'projects',
+    thumbnail: wcm['wcm-thumb'],
+    thumbnailDesktop: wcm['wcm-thumb-d'],
+    images: [
+      wcm['wcm-hero'], wcm['wcm-s2'], wcm['wcm-s3'], wcm['wcm-s4'],
+      wcm['wcm-s5'], wcm['wcm-s6'], wcm['wcm-s7']
+    ],
+    name: "Westcoast Metric",
+    desc1: "An e-commerce website specializing in Volkswagen automotive parts.",
+    desc2: "The project involved implementing custom designs and features based on client specifications. I also optimized the site's core web vitals to improve user experience and drive conversions.",
+    stack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'PHP', 'JQuery'],
+  },
+];
