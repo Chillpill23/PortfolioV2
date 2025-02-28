@@ -16,9 +16,10 @@ import '../animations/Stars.css'
 
 // Utils import
 import { Reveal, ScrollToTop } from '../utils';
+import { ProjectType } from '../types/data';
 
 export default function Home() {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
   
   const images = import.meta.glob("../assets/hero/*.webp", { eager: true });
 
@@ -57,7 +58,7 @@ export default function Home() {
             <Reveal>
               <div className="hero__cta-wrapper">
                 <Button
-                  class='hero__cta cta'
+                  btnStyle='hero__cta cta'
                   name="View My Works"
                   url='projects'
                   icon={<FontAwesomeIcon icon={faCopy} />}

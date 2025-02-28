@@ -1,5 +1,7 @@
 import aboutImage from '../assets/about/about.webp'
-export const About = [
+import { AboutType } from '../types/data'
+
+export const About:AboutType[] = [
   {
     image:aboutImage,
     name: 'Mark Lagarta',

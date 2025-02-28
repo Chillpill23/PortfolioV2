@@ -24,7 +24,7 @@ function Header() {
                 <li key={link.name}>
                     <a title={link.title} 
                      className='header__link' 
-                     url={link.url}
+                     href={link.url}
                      onClick={(e) => {
                       e.preventDefault();
                       setIsOpen(!isOpen)
@@ -40,7 +40,6 @@ function Header() {
             </li>
           </ul>
         </nav>
-        {/* <FontAwesomeIcon icon={isOpen ? faXmark : faBarsStaggered } onClick={()=> {setIsOpen(!isOpen)}} className={`${isOpen ? 'close' : 'open' } header__mobile`}/> */}
         <div
           className={`header__mobile ${isOpen ? 'open' : 'close'}`}
           onClick={() => setIsOpen(!isOpen)}

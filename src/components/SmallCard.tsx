@@ -1,6 +1,14 @@
+import { ReactNode } from 'react';
 import CountUp from 'react-countup';
 
-function SmallCard({section,stats, icon, desc}) {
+interface SmallCardProps {
+  section:string;
+  stats:number;
+  icon?:ReactNode;
+  desc:string;
+}
+
+function SmallCard({section,stats, icon, desc}:SmallCardProps) {
   return (
     <div className={`${section}__sCard`}>
       <div className="sCard__visual">

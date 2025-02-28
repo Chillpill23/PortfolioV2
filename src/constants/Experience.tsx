@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLaptopCode, faProjectDiagram, faComments, faPalette } from '@fortawesome/free-solid-svg-icons'
+import { ExprienceType } from '../types/data'
 
-export const Experience = [
+export const Experience:ExprienceType[] = [
   {
     name:'sites',
     stats:15,

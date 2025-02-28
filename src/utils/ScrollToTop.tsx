@@ -4,7 +4,7 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function ScrollToTop()  {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -13,7 +13,7 @@ export default function ScrollToTop()  {
 
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
-  }, [isVisible]);
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

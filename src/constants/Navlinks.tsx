@@ -1,4 +1,6 @@
-export const MainLinks = [
+import { LinksType } from "../types/data";
+
+export const MainLinks:LinksType[] = [
   {
     name:'About',
     url:'about',

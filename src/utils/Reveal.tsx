@@ -1,7 +1,17 @@
-import {useEffect, useRef} from 'react'
+import {ReactNode, useEffect, useRef} from 'react'
 import {motion, useInView, useAnimation} from 'framer-motion'
 
-export const Reveal = ({children, width="fit-content", padding, height, gridColumn, gridRow}) => {
+
+interface RevealProps {
+  children:ReactNode;
+  width?:string;
+  padding?:string;
+  height?:string;
+  gridColumn?:string;
+  gridRow?:string;
+}
+
+export const Reveal = ({children, width="fit-content", padding, height, gridColumn, gridRow}: RevealProps) => {
 
   const ref = useRef(null);
   const isInview = useInView(ref, { once: true })
