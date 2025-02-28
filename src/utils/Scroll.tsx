@@ -1,4 +1,8 @@
-export const Scroll = (anchor) => {
+interface ScrollProps {
+  anchor:string;
+} 
+
+export const Scroll = ({anchor}:ScrollProps) => {
   const id = `${anchor}`;
   const element = document.getElementById(id);
 

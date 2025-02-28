@@ -7,13 +7,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import '../css/Modal.css'
+import { ProjectType } from '../types/data';
 
-function Modal({project, onClose}) {
+interface ModalProps {
+  project:ProjectType | null;
+  onClose: () => void;
+}
+
+function Modal({project, onClose}:ModalProps) {
 
   if (!project) return null;
 
   useEffect(()=>{
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if(e.key === "Escape") onClose();
     };
 
@@ -46,7 +52,7 @@ function Modal({project, onClose}) {
           
           <div className='modal__wrapper'>
             <div className="modal__image">
-              {project.images.map((img,index) => {
+              {project.images?.map((img,index) => {
                 return <img loading='lazy' key={index} src={img} alt={`Screenshot ${index}`} />
               })}
             </div>

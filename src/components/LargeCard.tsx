@@ -4,9 +4,21 @@ import { faEye, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 
 import { Reveal } from "../utils/Reveal"
 
-function LargeCard({category, section, name, thumbnail, desc1, desc2, stack, url, onClick}) {
+interface LargeCardProps {
+  category:string;
+  section:string;
+  name:string;
+  thumbnail:string;
+  images?:string[];
+  desc1:string;
+  desc2?:string;
+  stack:string[];
+  url?:string;
+  onClick?:() => void;
+}
 
-  console.log(url)
+function LargeCard({category, section, name, thumbnail, desc1, desc2, stack, url, onClick}:LargeCardProps) {
+
   return (
     <article className={`${section}__lCard`}>
         <div className="lCard__wrapper">
