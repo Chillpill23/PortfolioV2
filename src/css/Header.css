@@ -6,6 +6,13 @@ header{
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position:sticky;
+  top:0;
+  z-index: 1000;
+  background: rgba(28, 28, 28, 0.3); 
+  box-shadow: 0 4px 6px rgba(34, 34, 34, 0.1);
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
 }
 
 .header__wrapper{

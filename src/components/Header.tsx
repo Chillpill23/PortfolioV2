@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Scroll } from '../utils/Scroll'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
