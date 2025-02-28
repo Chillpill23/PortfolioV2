@@ -28,7 +28,7 @@ function Header() {
                      onClick={(e) => {
                       e.preventDefault();
                       setIsOpen(!isOpen)
-                      Scroll(link.url)
+                      Scroll({ anchor: link.url })
                      }}
                     ><span>0{index + 1}. </span>{link.name}</a>
                 </li>
