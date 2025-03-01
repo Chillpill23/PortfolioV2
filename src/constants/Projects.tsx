@@ -25,10 +25,10 @@ export const Projects: ProjectType[] = [
     thumbnail: klimateThumb as string,
     thumbnailDesktop:klimateThumbD as string,
     name: "Klimate Weather App",
-    desc1: "A weather forecast web application that showcases data fetched from Openweathermap.org",
-    desc2: "This involved features such as 5-day weather forecasts, Weather details, Today's Temperature, Search Queries and histories, as well as Favorite cities.",
+    desc1: "A Weather forecast application that provides comprehensive information sourced from OpenWeatherMap, including 5-day forecasts, weather data, temperatures, search feature, and a favorites list for quick access to your preferred cities.",
     stack: ['React', 'Tailwind.css', 'Typescript', 'TanStack Query', 'Shadcn UI', 'Vercel'],
-    url:"https://klimate-mu.vercel.app/"
+    url:"https://klimate-mu.vercel.app/",
+    github:"https://github.com/Chillpill23/Klimate"
   },
   {
     category:'work',

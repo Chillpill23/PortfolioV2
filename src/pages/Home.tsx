@@ -8,7 +8,7 @@ import { Experience, Projects, About } from '../constants';
 
 // Icons import
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCopy, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+import { faCopy, faEnvelope, faMapMarkerAlt, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 // Styles import
 import '../css/Home.css'
@@ -17,6 +17,7 @@ import '../animations/Stars.css'
 // Utils import
 import { Reveal, ScrollToTop } from '../utils';
 import { ProjectType } from '../types/data';
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
@@ -57,14 +58,25 @@ export default function Home() {
 
             <Reveal>
               <div className="hero__cta-wrapper">
+
+                <a 
+                  href="/PortfolioV2/Lagarta-Resume.pdf" 
+                  target='_blank' 
+                  rel="noopener noreferrer" 
+                  className='hero__cta cta' 
+                  aria-label="Explore My Resume"
+                >
+                  <FontAwesomeIcon icon={faCopy} />
+                  Explore My Resume
+                </a>
+
                 <Button
-                  btnStyle='hero__cta cta'
+                  btnStyle='hero__cta cta secondary'
                   name="View My Works"
                   url='projects'
-                  icon={<FontAwesomeIcon icon={faCopy} />}
+                  icon={<FontAwesomeIcon className="hero__cta__icon" icon={faArrowDown} />}
+                  pos='right'
                 />
-
-                <a href="/PortfolioV2/Lagarta-Resume.pdf" target='_blank' rel="noopener noreferrer" className='hero__cta cta secondary' aria-label="Explore My Resume">Explore My Resume</a>
               </div>
             </Reveal>
           </div>
@@ -93,10 +105,10 @@ export default function Home() {
       <section className="about" id='about'>
         <div className="about__wrapper container">
           <Reveal>
-            <h4 className='section-header'>
+            <h3 className='section-header'>
               <span className="sublight">01.</span> 
               <span className='section__title'>About Me</span>
-            </h4>
+            </h3>
           </Reveal>
 
           {About.map((me) => {
@@ -145,10 +157,10 @@ export default function Home() {
       <section className="exp" id='experience'>
         <div className="exp__wrapper container">
           <Reveal>
-            <h4 className='section-header'>
+            <h3 className='section-header'>
               <span className="sublight">02.</span> 
               <span className='section__title'>Where I&apos;ve Worked</span>
-            </h4>
+            </h3>
           </Reveal>
 
           <div className='exp__content'>
@@ -183,10 +195,10 @@ export default function Home() {
       <section className="projects" id='projects'>
         <div className="projects__wrapper container">
           <Reveal>
-            <h4 className='section-header'>
+            <h3 className='section-header'>
               <span className="sublight">03.</span> 
               <span className='section__title'>Some Things I&apos;ve Built</span>
-            </h4>
+            </h3>
           </Reveal>
 
 
@@ -205,6 +217,7 @@ export default function Home() {
                     images={project.images}
                     onClick={() => {setSelectedProject(project)}}
                     url={project.url}
+                    github={project.github}
                   />
                 )
               })}
@@ -217,9 +230,10 @@ export default function Home() {
       <section className="contact" id='contact'>
         <div className="contact__wrapper container">
           <Reveal>
-            <h4 className='section-header'>
+            <h3 className='section-header'>
+              <span className="sublight">04.</span> 
               <span className='section__title'>What&apos;s Next?</span>
-            </h4>
+            </h3>
           </Reveal>
 
           <Reveal>
@@ -227,8 +241,41 @@ export default function Home() {
               <h5>Get In Touch</h5>
               <p>I am eager to embrace new challenges and currently seeking an opportunity to contribute my skills.</p>
               <p>I am particularly passionate about React web development and excited to explore roles in this field.</p>
+              
+              <div className='contact__socials__wrapper'>
+                <a 
+                  href='mailto:mj.lagarta00@gmail.com' 
+                  className='contact__email' 
+                  title='Get in touch' 
+                  aria-label="Get in touch"
+                >
+                  <FontAwesomeIcon size='lg' className='icon' icon={faEnvelope} />
+                  mj.lagarta00@gmail.com
+                </a>
 
-              <a href='mailto:mj.lagarta@gmail.com' className='hero__cta cta' aria-label="Say Hello"><FontAwesomeIcon icon={faEnvelope} />Say hello</a>
+                <span>or</span>
+                <div className='contact__socials'>
+                  <a
+                    href="https://github.com/Chillpill23"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Check my other projects in Github"
+                    aria-label="Github profile"
+                  >
+                    <FontAwesomeIcon className='icon' size="xl" icon={faGithub} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/mark-l-8583051b4/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Explore my Linkedin profile"
+                    aria-label="LinkedIn profile"
+                  >
+                    <FontAwesomeIcon className='icon' size="xl" icon={faLinkedinIn} />
+                  </a>
+                </div>
+              </div>
+              
             </article>
           </Reveal>
         </div>

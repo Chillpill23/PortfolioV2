@@ -11,6 +11,7 @@ export interface ProjectType {
   desc2?: string;
   stack: string[];
   url?: string;
+  github?:string;
 }
 
 export interface LinksType {
