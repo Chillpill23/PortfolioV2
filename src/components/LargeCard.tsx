@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 
 import { Reveal } from "../utils/Reveal"
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 interface LargeCardProps {
   category:string;
@@ -15,9 +16,10 @@ interface LargeCardProps {
   stack:string[];
   url?:string;
   onClick?:() => void;
+  github?:string;
 }
 
-function LargeCard({category, section, name, thumbnail, desc1, desc2, stack, url, onClick}:LargeCardProps) {
+function LargeCard({category, section, name, thumbnail, desc1, desc2, stack, url, onClick,github}:LargeCardProps) {
 
   return (
     <article className={`${section}__lCard`}>
@@ -43,11 +45,11 @@ function LargeCard({category, section, name, thumbnail, desc1, desc2, stack, url
 
         <div className="lCard__info">
           <Reveal width="unset">
-            <p>{desc1}</p> 
-          </Reveal>
+              <p>{desc1}</p> 
 
-          <Reveal>
-            <p>{desc2}</p> 
+              {desc2 && (
+                <p>{desc2}</p> 
+              )}
           </Reveal>
 
           <div className="lCard__stack stack-wrapper">
@@ -63,26 +65,41 @@ function LargeCard({category, section, name, thumbnail, desc1, desc2, stack, url
           </div>
 
           {category === "personal" ? (
-            <a 
-              href={url}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='cta secondary lCard__cta' 
-              role='button' 
-              aria-label='View Site' 
+            <div className="lCard__link__wrapper">
+              <a 
+                href={url}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='' 
+                role='button' 
+                aria-label='View site'
+                title="View Live site"
               >
-                  <FontAwesomeIcon icon={faUpRightFromSquare} />
-                  View {name}
-            </a>
+                  <FontAwesomeIcon className="icon" size="lg" icon={faUpRightFromSquare} />
+              </a>
+
+              <a 
+                href={github}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='' 
+                role='button' 
+                aria-label='View Github repository'
+                title="View Github repository"
+              >
+                  <FontAwesomeIcon className="icon" size="lg" icon={faGithub} />
+              </a>
+            </div>
+            
           ) : (
             <button 
-              className='cta secondary lCard__cta' 
+              className='cta lCard__cta' 
               role='button' 
               aria-label='View site snapshots' 
               onClick={onClick}
               >
                   <FontAwesomeIcon icon={faEye} />
-                  View site snapshots
+                  View Gallery
             </button>
           )}
 

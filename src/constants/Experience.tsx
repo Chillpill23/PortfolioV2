@@ -17,25 +17,25 @@ export const Experience:ExprienceType[] = [
   },
   {
     name:'communication',
-    stats:0,
+    stats:20,
     desc:'Provided client communication and step-by-step CMS training.',
     icon:<FontAwesomeIcon icon={faComments} />
   },
   {
     name:'documentation',
-    stats:0,
+    stats:12,
     desc:'Created process and code documentation to enhance coding efficiency and team collaboration.',
     icon:<FontAwesomeIcon icon={faProjectDiagram} />
   },
   {
     name:'UI/UX',
-    stats:0,
+    stats:98,
     desc:'Redesigned the company\'s core website template, improving UI/UX and Core Web Vitals scores.',
     icon:<FontAwesomeIcon icon={faPalette} />
   },
   {
     name:'integrations',
-    stats:0,
+    stats:7,
     desc:'Spearheaded integration with key third-party services reusable code for efficient deployment.',
     icon: <FontAwesomeIcon icon={faLaptopCode} />
   },

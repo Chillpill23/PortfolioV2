@@ -6,9 +6,10 @@ interface ButtonProps{
   name:string;
   url:string;
   icon:ReactNode;
+  pos?:string;
 }
 
-function Button({btnStyle, name, url, icon}:ButtonProps) {
+function Button({btnStyle, name, url, icon, pos}:ButtonProps) {
   return (
     <button role='button' 
       className={btnStyle} 
@@ -18,8 +19,18 @@ function Button({btnStyle, name, url, icon}:ButtonProps) {
         Scroll({ anchor: url })
       }}
     >
-      {icon && (<span>{icon}</span>)}
-      <span>{name}</span>
+      {pos === 'right' ? (
+        <>
+          <span>{name}</span>
+          {icon && (<span>{icon}</span>)}
+        </>
+      ) : (
+        <>
+          {icon && (<span>{icon}</span>)}
+          <span>{name}</span>
+        </>
+      )}
+
     </button>
   )
 }
