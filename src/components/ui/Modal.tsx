@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { memo, useEffect } from 'react'
 
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -6,15 +6,15 @@ import { createPortal } from 'react-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import '../css/Modal.css'
-import { ProjectType } from '../types/data';
+import '../../styles/Modal.css'
+import { ProjectType } from '../../types/data';
 
 interface ModalProps {
   project:ProjectType | null;
   onClose: () => void;
 }
 
-function Modal({project, onClose}:ModalProps) {
+const Modal = memo(({project, onClose}:ModalProps) => {
 
   if (!project) return null;
 
@@ -62,6 +62,6 @@ function Modal({project, onClose}:ModalProps) {
     </AnimatePresence>,
     document.body
   )
-}
+})
 
 export default Modal

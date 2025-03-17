@@ -1,4 +1,4 @@
-import {ReactNode, useEffect, useRef} from 'react'
+import {memo, ReactNode, useEffect, useRef} from 'react'
 import {motion, useInView, useAnimation} from 'framer-motion'
 
 
@@ -11,7 +11,7 @@ interface RevealProps {
   gridRow?:string;
 }
 
-export const Reveal = ({children, width="fit-content", padding, height, gridColumn, gridRow}: RevealProps) => {
+export const Reveal = memo(({children, width="fit-content", padding, height, gridColumn, gridRow}: RevealProps) => {
 
   const ref = useRef(null);
   const isInview = useInView(ref, { once: true })
@@ -62,4 +62,4 @@ export const Reveal = ({children, width="fit-content", padding, height, gridColu
       />
     </div>
   )
-}
+})
