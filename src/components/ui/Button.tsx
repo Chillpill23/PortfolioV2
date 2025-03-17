@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { Scroll } from '../utils/Scroll'
+import { ReactNode,memo } from 'react';
+import { Scroll } from '../../utils/Scroll'
 
 interface ButtonProps{
   btnStyle:string;
@@ -9,7 +9,7 @@ interface ButtonProps{
   pos?:string;
 }
 
-function Button({btnStyle, name, url, icon, pos}:ButtonProps) {
+const Button = memo(({btnStyle, name, url, icon, pos}:ButtonProps) => {
   return (
     <button role='button' 
       className={btnStyle} 
@@ -33,6 +33,6 @@ function Button({btnStyle, name, url, icon, pos}:ButtonProps) {
 
     </button>
   )
-}
+});
 
 export default Button

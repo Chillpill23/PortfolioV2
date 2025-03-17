@@ -1,15 +1,15 @@
 import { useState } from 'react'
-import { Scroll } from '../utils/Scroll'
-import { scrollToTop } from '../utils/ScrollToTop'
+import { Scroll } from '../../utils/Scroll'
+import { scrollToTop } from '../../utils/ScrollToTop'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBarsStaggered, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
-import { MainLinks } from '../constants/Navlinks'
+import { MainLinks } from '../../constants/Navlinks'
 
-import logo from '../assets/Logo-1.png'
-import '../css/Header.css'
+import logo from '../../assets/Logo-1.png'
+import '../../styles/Header.css'
 
 
 function Header() {

@@ -1,7 +1,9 @@
 import './App.css'
-import Header from './components/Header'
+import { Suspense, lazy } from "react";
+
+import Header from './components/layout/Header'
 import Home from './pages/Home'
-import Footer from './components/Footer'
+const Footer = lazy(() => import("./components/layout/Footer"));
 
 
 function App() {
@@ -9,7 +11,9 @@ function App() {
     <>
       <Header />
       <Home />
-      <Footer />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Footer />
+      </Suspense>
     </>
   )
 }

@@ -2,8 +2,9 @@ import StackCard from "./StackCard"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 
-import { Reveal } from "../utils/Reveal"
+import { Reveal } from "../../utils/Reveal"
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { memo } from "react";
 
 interface LargeCardProps {
   category:string;
@@ -19,7 +20,7 @@ interface LargeCardProps {
   github?:string;
 }
 
-function LargeCard({category, section, name, thumbnail, desc1, desc2, stack, url, onClick,github}:LargeCardProps) {
+const LargeCard = memo(({category, section, name, thumbnail, desc1, desc2, stack, url, onClick,github}:LargeCardProps) => {
 
   return (
     <article className={`${section}__lCard`}>
@@ -107,6 +108,6 @@ function LargeCard({category, section, name, thumbnail, desc1, desc2, stack, url
         </div>
     </article>
   )
-}
+})
 
 export default LargeCard
