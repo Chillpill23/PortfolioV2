@@ -9,8 +9,8 @@ import { ScrollToTop } from '../utils';
 import { Suspense, lazy } from "react";
 
 import Hero from "../components/section/Hero"
+import AboutSection from '../components/section/About';
 
-const AboutSection = lazy(() => import("../components/section/About"))
 const ExperienceSection = lazy(() => import("../components/section/Experience"))
 const Projects = lazy(() => import("../components/section/Projects"))
 
@@ -18,8 +18,8 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <AboutSection />
       <Suspense fallback={<div>Loading...</div>}>
-        <AboutSection />
         <ExperienceSection />
         <Projects />
       </Suspense>
