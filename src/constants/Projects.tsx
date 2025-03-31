@@ -12,13 +12,27 @@ const formatImages = (imageSet: Record<string, { default: string }>) =>
 
 // Processed image objects
 const ez = formatImages(ezImages);
-const wcm = formatImages(wcmImages);
+// const wcm = formatImages(wcmImages);
+
+import yhThumb from '../assets/projects/yh/yh-thumb-m.webp'
+import yhThumbD from '../assets/projects/yh/yh-thumb-d.webp'
 
 import klimateThumb from '../assets/projects/klimate/klimate-thumb.webp'
 import klimateThumbD from '../assets/projects/klimate/klimate-thumb-d.webp'
 import { ProjectType } from '../types/data';
 
 export const Projects: ProjectType[] = [
+  {
+    category:'personal',
+    section: 'projects',
+    thumbnail: yhThumb as string,
+    thumbnailDesktop: yhThumbD as string,
+    name: "York Hamilton",
+    desc1: "A homepage concept design for York Hamilton featuring a sleek, modern layout with a professional aesthetic that showcases projects and services effectively.",
+    stack: ['React', 'Typescript', 'SASS/SCSS', 'Vite'],
+    url:"https://chillpill23.github.io/YorkHamilton/",
+    github:"https://github.com/Chillpill23/YorkHamilton"
+  },
   {
     category:'personal',
     section: 'projects',
@@ -45,18 +59,18 @@ export const Projects: ProjectType[] = [
     desc2: "This involved custom design implementation, feature development, and core web vital optimization to maximize performance and user engagement.",
     stack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'PHP', 'JQuery'],
   },
-  {
-    category:'work',
-    section: 'projects',
-    thumbnail: wcm['wcm-thumb'] as string,
-    thumbnailDesktop: wcm['wcm-thumb-d'] as string,
-    images: [
-      wcm['wcm-hero'], wcm['wcm-s2'], wcm['wcm-s3'], wcm['wcm-s4'],
-      wcm['wcm-s5'], wcm['wcm-s6'], wcm['wcm-s7']
-    ] as string[],
-    name: "Westcoast Metric",
-    desc1: "An e-commerce website specializing in Volkswagen automotive parts.",
-    desc2: "The project involved implementing custom designs and features based on client specifications. I also optimized the site's core web vitals to improve user experience and drive conversions.",
-    stack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'PHP', 'JQuery'],
-  },
+  // {
+  //   category:'work',
+  //   section: 'projects',
+  //   thumbnail: wcm['wcm-thumb'] as string,
+  //   thumbnailDesktop: wcm['wcm-thumb-d'] as string,
+  //   images: [
+  //     wcm['wcm-hero'], wcm['wcm-s2'], wcm['wcm-s3'], wcm['wcm-s4'],
+  //     wcm['wcm-s5'], wcm['wcm-s6'], wcm['wcm-s7']
+  //   ] as string[],
+  //   name: "Westcoast Metric",
+  //   desc1: "An e-commerce website specializing in Volkswagen automotive parts.",
+  //   desc2: "The project involved implementing custom designs and features based on client specifications. I also optimized the site's core web vitals to improve user experience and drive conversions.",
+  //   stack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'PHP', 'JQuery'],
+  // },
 ];
