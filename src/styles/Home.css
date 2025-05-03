@@ -212,9 +212,6 @@
 .lCard__image source, .lCard__image img{
   width: 100%;
   border-radius: 8px;
-  -webkit-filter: brightness(0.8);
-          filter: brightness(0.8);
-  -webkit-transition: 0.2s ease all;
   -o-transition: 0.2s ease all;
   transition: 0.2s ease all;
   cursor: pointer;
@@ -224,8 +221,6 @@
   -webkit-transform:translateY(-20px);
       -ms-transform:translateY(-20px);
           transform:translateY(-20px);
-  -webkit-filter:brightness(1);
-          filter:brightness(1)
 }
 
 .lCard__info p{
@@ -429,10 +424,10 @@
   .exp__subtitle{
     font-weight: 500;
     font-family: var(--ff-main);
-    color: var(--clr-neutral500);
+    color: var(--clr-neutral400);
   }
   .exp__subtitle svg path{
-    color: var(--clr-neutral500);
+    color: var(--clr-neutral400);
   }
 
   .exp__cards{
