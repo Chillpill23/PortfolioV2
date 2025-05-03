@@ -29,12 +29,12 @@
 
   --clr-neutral:#FFFFFF;
   --clr-neutral200:#F5F1F7;
-  --clr-neutral400:#b7b7b7;
+  --clr-neutral400:#afafaf;
   --clr-neutral500:#8f8e8e;
   --clr-neutral600:#4E4E51;
   --clr-neutral700:#3D3D3E;
   --clr-neutral800:#282828;
-  --clr-neutral900:#171717;
+  --clr-neutral900:#0d0d0d;
 
   --br-radius:4px;
 }
@@ -95,6 +95,7 @@ li{
 h1,h2,h3,h4,h5,h6{
   font-family: var(--ff-main);
   margin: 0;
+  color: var(--clr-neutral200);
 }
 
 a, .cta{
@@ -163,6 +164,7 @@ section{
 
 .section__title{
   font-family: var(--ff-main);
+  color:var(--clr-neutral200)
 }
 
 .cta{
@@ -235,13 +237,14 @@ img{
 }
 
 .stack__card{
-  border: 1px solid rgb(129 129 129 / 30%);
-  padding: 0.4rem 0.8rem;
+  border: 1px solid rgb(129 129 129 / 17%);
   border-radius: 4px;
+  background: #1b1b1b;
+  padding: 0.4rem 0.8rem;
   font-weight: 500;
-  color: var(--clr-primary400);
   font-size: var(--fs-hints);
   text-align: center;
+  color: var(--clr-primary400);
 }
 
 .scroll-to-top {
