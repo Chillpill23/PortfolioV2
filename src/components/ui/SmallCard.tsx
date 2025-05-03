@@ -12,18 +12,22 @@ const SmallCard = memo(({section,stats, icon, desc}:SmallCardProps) => {
   return (
     <div className={`${section}__sCard`}>
       <div className="sCard__visual">
-        {stats > 0 && 
-          <span>
-            <CountUp 
+        {stats > 0 && (
+          <CountUp
             key={stats}
-             start={0} 
-             end={stats ?? 0}
-             duration={2.5}
-             enableScrollSpy = {true}
-             scrollSpyOnce = {true}
-            />+
-          </span>
-        }
+            start={0}
+            end={stats}
+            duration={2.5}
+            enableScrollSpy={true}
+            scrollSpyOnce={true}
+          >
+            {({ countUpRef }) => (
+              <span>
+                <span ref={countUpRef} />+
+              </span>
+            )}
+          </CountUp>
+        )}
         {(stats === 0 && icon) ? <span>{icon}</span> : null}
       </div>
       <p className="sCard__content">{desc}</p>
