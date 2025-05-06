@@ -19,6 +19,7 @@
   --clr-primary:#8623FF;
   --clr-primarydark:#310e5d;
   --clr-primary900:#5c17af;
+  --clr-primary800:#6d21c8;
   --clr-primary400:#D8B6FF;
   --clr-primary200:#ECDAFF;
   --clr-primary100:#F6EDFF;
@@ -33,7 +34,7 @@
   --clr-neutral500:#8f8e8e;
   --clr-neutral600:#4E4E51;
   --clr-neutral700:#3D3D3E;
-  --clr-neutral800:#282828;
+  --clr-neutral800:#232323;
   --clr-neutral900:#0d0d0d;
 
   --br-radius:4px;
@@ -206,7 +207,8 @@ section{
 }
 
 .cta.secondary span{
-  color: var(--clr-secondary200);
+  color: var(--clr-primary200);
+  font-size:var(--fs-xs)
 }
 
 .highlight{
@@ -278,7 +280,7 @@ img{
   }
 
   .cta{
-    padding:0.5rem 1rem;
+    padding:0.7rem 1.4rem;
   }
 
   .cta.secondary{

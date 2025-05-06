@@ -9,6 +9,7 @@ const Hero = () => {
 
   const images = import.meta.glob("../../assets/hero/*.webp", { eager: true });
 
+  const profile = images["../../assets/hero/profile.webp"].default
   const wolf = images["../../assets/hero/wolf-layer.webp"].default;
   const mountain = images["../../assets/hero/mountain-layer.webp"].default;
 
@@ -24,13 +25,14 @@ const Hero = () => {
 
         <Reveal>
           <small className="hero__subtitle">
-            Frontend Developer
+            <img src={profile} alt="Profile image"/>
+            <span><span className='circle'></span>Open for work</span>
           </small>
         </Reveal>
 
         <Reveal>
           <h1 className="hero__title">
-            Mark Lagarta
+            Frontend Developer
           </h1>
         </Reveal>
 
