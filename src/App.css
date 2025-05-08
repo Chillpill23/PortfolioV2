@@ -7,7 +7,7 @@
   --fs-s:clamp(1.25rem, 2.5vw, 1.563rem); /*20 - 25px */
   --fs-xs:clamp(1rem, 2vw, 1rem); /*16px */
 
-  --fs-body:clamp(1rem, 1.5vw, 1.1rem); /* 16 - 19px */
+  --fs-body:clamp(1rem, 1.6vw, 1.2rem); /* 16 - 19px */
   --fs-sub:clamp(0.9rem, 1.2vw, 1.05rem); /* 14 - 17px */
   --fs-hints:clamp(0.8rem, 1.5vw, 0.9rem); /* 10 - 14px */
 
@@ -19,6 +19,7 @@
   --clr-primary:#8623FF;
   --clr-primarydark:#310e5d;
   --clr-primary900:#5c17af;
+  --clr-primary800:#6d21c8;
   --clr-primary400:#D8B6FF;
   --clr-primary200:#ECDAFF;
   --clr-primary100:#F6EDFF;
@@ -33,7 +34,7 @@
   --clr-neutral500:#8f8e8e;
   --clr-neutral600:#4E4E51;
   --clr-neutral700:#3D3D3E;
-  --clr-neutral800:#282828;
+  --clr-neutral800:#232323;
   --clr-neutral900:#0d0d0d;
 
   --br-radius:4px;
@@ -94,7 +95,7 @@ li{
 
 h1,h2,h3,h4,h5,h6{
   font-family: var(--ff-main);
-  margin: 0;
+  margin: 0 0 1.5rem;
   color: var(--clr-neutral200);
 }
 
@@ -130,6 +131,7 @@ h6 {
 p {
   font-size: var(--fs-body);
   line-height:1.8rem;
+  margin:0 0 1.5rem 0;
 }
 
 small {
@@ -206,7 +208,8 @@ section{
 }
 
 .cta.secondary span{
-  color: var(--clr-secondary200);
+  color: var(--clr-primary200);
+  font-size:var(--fs-xs)
 }
 
 .highlight{
@@ -278,7 +281,7 @@ img{
   }
 
   .cta{
-    padding:0.5rem 1rem;
+    padding:0.7rem 1.4rem;
   }
 
   .cta.secondary{

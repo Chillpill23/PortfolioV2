@@ -9,6 +9,7 @@ const Hero = () => {
 
   const images = import.meta.glob("../../assets/hero/*.webp", { eager: true });
 
+  const profile = images["../../assets/hero/profile.webp"].default
   const wolf = images["../../assets/hero/wolf-layer.webp"].default;
   const mountain = images["../../assets/hero/mountain-layer.webp"].default;
 
@@ -24,19 +25,20 @@ const Hero = () => {
 
         <Reveal>
           <small className="hero__subtitle">
-            Frontend Developer
+            <img src={profile} alt="Profile image"/>
+            <span><span className='circle'></span>Open for work</span>
           </small>
         </Reveal>
 
         <Reveal>
           <h1 className="hero__title">
-            Mark Lagarta
+            Frontend Developer
           </h1>
         </Reveal>
 
         <Reveal>
           <p className="hero__caption">
-            Crafting beautiful sites that people will remember
+          To me, every interface is a canvas and every user journey a narrative. Where every scroll, click, and animation is part of a seamless experience.
           </p>
         </Reveal>
 
@@ -51,12 +53,12 @@ const Hero = () => {
               aria-label="Explore My Resume"
             >
               <FontAwesomeIcon icon={faCopy} />
-              Explore My Resume
+              View Resume
             </a>
 
             <Button
               btnStyle='hero__cta cta secondary'
-              name="View My Works"
+              name="Explore Projects"
               url='projects'
               icon={<FontAwesomeIcon className="hero__cta__icon" icon={faArrowDown} />}
               pos='right'
