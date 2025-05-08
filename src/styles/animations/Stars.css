@@ -22,11 +22,11 @@ span.star::before{
   0%
   {
       transform: rotate(340deg) translateX(0);
-      opacity: 1;
+      opacity: 0.8;
   }
-  70%
+  60%
   {
-      opacity: 1;
+      opacity: 0.3;
 
   }
   100%
@@ -42,7 +42,7 @@ span.star:nth-child(1){
   right: 0;
   left:initial;
   animation-delay:0 ;
-  animation-duration: 3s;
+  animation-duration: 3.3s;
 }
 
 span.star:nth-child(2){
@@ -50,7 +50,7 @@ span.star:nth-child(2){
   right: 80px;
   left:initial;
   animation-delay:0.2s;
-  animation-duration: 3.5s;
+  animation-duration: 3.8s;
 }
 
 span.star:nth-child(3){
@@ -58,6 +58,6 @@ span.star:nth-child(3){
   right: 0;
   left:initial;
   animation-delay:0 ;
-  animation-duration: 4s;
+  animation-duration: 4.3s;
 }
 

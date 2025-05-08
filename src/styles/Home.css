@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 1rem;
 
 }
 
@@ -117,7 +118,7 @@
 
 .hero__background{
   overflow: hidden;
-  background-image:url('../assets/hero/hero-bg.webp');
+  /* background-image:url('../assets/hero/hero-bg.webp'); */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -399,6 +400,7 @@
 
   .hero__caption{
     width:100%;
+    max-width:700px;
   }
 
   .hero__cta-wrapper{

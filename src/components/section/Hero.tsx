@@ -38,7 +38,7 @@ const Hero = () => {
 
         <Reveal>
           <p className="hero__caption">
-            Crafting beautiful sites that people will remember
+          To me, every interface is a canvas and every user journey a narrative. Where every scroll, click, and animation is part of a seamless experience.
           </p>
         </Reveal>
 
@@ -53,12 +53,12 @@ const Hero = () => {
               aria-label="Explore My Resume"
             >
               <FontAwesomeIcon icon={faCopy} />
-              Explore My Resume
+              View Resume
             </a>
 
             <Button
               btnStyle='hero__cta cta secondary'
-              name="View My Works"
+              name="Explore Projects"
               url='projects'
               icon={<FontAwesomeIcon className="hero__cta__icon" icon={faArrowDown} />}
               pos='right'
