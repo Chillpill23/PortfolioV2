@@ -9,7 +9,7 @@ import { Stack } from '../../constants/Stack';
 const AboutSection = () => {
   const aboutContent = useMemo(() => (
     About.map((me) => (
-      <>
+      <div key={me.name}>
         <div key={me.name} className="about__content">
           <Reveal>
             <div className="about__image">
@@ -32,13 +32,9 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className='about__stack'>
-          <Reveal>
-            <h4>Techstack</h4>
-          </Reveal>
-  
+        <div className='about__stack'>  
           <div className="stack__wrapper">
-            <h6 className='stack__title'>Frontend</h6>
+            <h4 className='stack__title'>Frontend</h4>
             <div className='stack__tech'>
               {me.frontend.map((tech) => {
 
@@ -46,7 +42,7 @@ const AboutSection = () => {
                 if(!stackItem) return null
               
                 return(
-                  <Reveal padding="0.5rem 0" key={tech}>
+                  <Reveal padding="0.5rem 0" key={stackItem.name}>
                     <StackCard name={stackItem.name} logo={stackItem.logo}/>
                   </Reveal>
                 )
@@ -55,7 +51,7 @@ const AboutSection = () => {
           </div>
 
           <div className="stack__wrapper">
-            <h6 className='stack__title'>Backend</h6>
+            <h4 className='stack__title'>Backend</h4>
             
             <div className='stack__tech'>
               {me.backend.map((tech) => {
@@ -64,7 +60,25 @@ const AboutSection = () => {
                 if(!stackItem) return null
               
                 return(
-                  <Reveal padding="0.5rem 0" key={tech}>
+                  <Reveal padding="0.5rem 0" key={stackItem.name}>
+                    <StackCard name={stackItem.name} logo={stackItem.logo}/>
+                  </Reveal>
+                )
+              })}
+            </div>
+          </div>
+                    
+          <div className="stack__wrapper">
+            <h4 className='stack__title'>Database</h4>
+
+            <div className='stack__tech'>
+              {me.database.map((tech) => {
+
+                const stackItem = Stack.find((s) => s.name === tech)
+                if(!stackItem) return null
+              
+                return(
+                  <Reveal padding="0.5rem 0" key={stackItem.name}>
                     <StackCard name={stackItem.name} logo={stackItem.logo}/>
                   </Reveal>
                 )
@@ -73,7 +87,7 @@ const AboutSection = () => {
           </div>
 
           <div className="stack__wrapper">
-            <h6 className='stack__title'>Database</h6>
+            <h4 className='stack__title'>Tools</h4>
 
             <div className='stack__tech'>
               {me.tools.map((tech) => {
@@ -82,7 +96,25 @@ const AboutSection = () => {
                 if(!stackItem) return null
               
                 return(
-                  <Reveal padding="0.5rem 0" key={tech}>
+                  <Reveal padding="0.5rem 0" key={stackItem.name}>
+                    <StackCard name={stackItem.name} logo={stackItem.logo}/>
+                  </Reveal>
+                )
+              })}
+            </div>
+          </div>
+          
+          <div className="stack__wrapper">
+            <h4 className='stack__title'>Design</h4>
+
+            <div className='stack__tech'>
+              {me.design.map((tech) => {
+
+                const stackItem = Stack.find((s) => s.name === tech)
+                if(!stackItem) return null
+              
+                return(
+                  <Reveal padding="0.5rem 0" key={stackItem.name}>
                     <StackCard name={stackItem.name} logo={stackItem.logo}/>
                   </Reveal>
                 )
@@ -90,7 +122,7 @@ const AboutSection = () => {
             </div>
           </div>
         </div>
-      </>
+      </div>
     ))
   ), [About]);
 
