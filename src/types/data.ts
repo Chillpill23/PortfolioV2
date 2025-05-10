@@ -32,5 +32,12 @@ export interface AboutType {
   name: string;
   desc1:string;
   desc2?:string;
-  stack:string[];
+  frontend:string[];
+  backend:string[];
+  tools:string[];
+}
+
+export interface StackType {
+  name:string;
+  logo:string;
 }

@@ -58,19 +58,5 @@ export const Projects: ProjectType[] = [
     desc1: "I engineered an e-commerce solution for an oil drain valve manufacturer.",
     desc2: "This involved custom design implementation, feature development, and core web vital optimization to maximize performance and user engagement.",
     stack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'PHP', 'JQuery'],
-  },
-  // {
-  //   category:'work',
-  //   section: 'projects',
-  //   thumbnail: wcm['wcm-thumb'] as string,
-  //   thumbnailDesktop: wcm['wcm-thumb-d'] as string,
-  //   images: [
-  //     wcm['wcm-hero'], wcm['wcm-s2'], wcm['wcm-s3'], wcm['wcm-s4'],
-  //     wcm['wcm-s5'], wcm['wcm-s6'], wcm['wcm-s7']
-  //   ] as string[],
-  //   name: "Westcoast Metric",
-  //   desc1: "An e-commerce website specializing in Volkswagen automotive parts.",
-  //   desc2: "The project involved implementing custom designs and features based on client specifications. I also optimized the site's core web vitals to improve user experience and drive conversions.",
-  //   stack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'PHP', 'JQuery'],
-  // },
+  }
 ];

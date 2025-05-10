@@ -299,6 +299,36 @@
   margin-top:2rem;
 }
 
+.about__stack{
+
+}
+
+.stack__wrapper{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stack__title{
+
+}
+
+.stack__tech{
+  display: flex;
+  flex-direction: column;
+}
+
+.stack__tech > *{
+  width: 100% !important;
+}
+
+.stack__tech .stack__card{
+  display: block;
+  width: 100% !important;
+}
+
+
+
 /* Contact section*/
 
 .contact__wrapper{
@@ -686,6 +716,7 @@
 
   .sCard__content{
     text-align: left;
+    margin:0;
   }
 }
 
