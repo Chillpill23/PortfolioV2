@@ -69,10 +69,12 @@ const ExperienceSection = memo(() => {
                     category={project.category}
                     section={project.section}
                     name={project.name}
+                    year={project.year}
                     thumbnail={project.thumbnail}
                     desc1={project.desc1}
                     desc2={project.desc2}
-                    stack={project.stack}
+                    frontend={project.frontend}
+                    backend={project.backend}
                     images={project.images}
                     onClick={() => {setSelectedProject(project)}}
                     url={project.url}

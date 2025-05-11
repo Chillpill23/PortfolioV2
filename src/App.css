@@ -4,11 +4,11 @@
   --fs-xl:clamp(2rem, 3.8vw, 2.6rem); /*32 - 48px */
   --fs-l:clamp(1.5rem, 3.5vw, 2.1rem); /*28 - 39px */
   --fs-m:clamp(1.5rem, 3vw, 1.853rem); /*24 - 31px */
-  --fs-s:clamp(1.25rem, 2.5vw, 1.563rem); /*20 - 25px */
+  --fs-s:clamp(1.25rem, 2.5vw, 1.2rem); /*20 - 25px */
   --fs-xs:clamp(1rem, 2vw, 1rem); /*16px */
 
   --fs-body:clamp(1rem, 1.6vw, 1.2rem); /* 16 - 19px */
-  --fs-sub:clamp(0.9rem, 1.2vw, 1.05rem); /* 14 - 17px */
+  --fs-sub:clamp(0.9rem, 1.2vw, 1rem); /* 14 - 17px */
   --fs-hints:clamp(0.8rem, 1.5vw, 0.9rem); /* 10 - 14px */
 
   /* Font Family */
@@ -29,7 +29,8 @@
   --clr-secondary100:#FFE0BC;
 
   --clr-neutral:#FFFFFF;
-  --clr-neutral200:#F5F1F7;
+  --clr-neutral200:#e5e3e6;
+  --clr-neutral300:#cccccc;
   --clr-neutral400:#afafaf;
   --clr-neutral500:#8f8e8e;
   --clr-neutral600:#4E4E51;
@@ -153,7 +154,7 @@ section{
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  margin:20px 0;
+  margin:2rem 0;
   width: 100%;
   scroll-margin-top: 20px;
 }
@@ -236,7 +237,7 @@ img{
   display: flex;
   flex-wrap: wrap;
   gap:0.7rem ;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .stack__card{
@@ -245,9 +246,12 @@ img{
   background: #1b1b1b;
   padding: 0.4rem 0.8rem;
   font-weight: 500;
-  font-size: var(--fs-hints);
+  font-size: var(--fs-sub);
   text-align: center;
-  color: var(--clr-primary400);
+  color: var(--clr-neutral300);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
 }
 
 .scroll-to-top {

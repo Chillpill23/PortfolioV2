@@ -3,13 +3,16 @@ import { ReactNode } from "react";
 export interface ProjectType {
   category: string;
   section: string;
+  year:string;
   thumbnail: string;
   thumbnailDesktop?: string;
   images?: string[];
   name: string;
   desc1: string;
   desc2?: string;
-  stack: string[];
+  frontend: string[];
+  backend?: string[];
+  database?: string[];
   url?: string;
   github?:string;
 }
@@ -32,5 +35,14 @@ export interface AboutType {
   name: string;
   desc1:string;
   desc2?:string;
-  stack:string[];
+  frontend:string[];
+  backend:string[];
+  database:string[];
+  tools:string[];
+  design:string[];
+}
+
+export interface StackType {
+  name:string;
+  logo:string;
 }

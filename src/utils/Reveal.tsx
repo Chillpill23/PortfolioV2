@@ -31,7 +31,7 @@ export const Reveal = memo(({children, width="fit-content", padding, height, gri
       <motion.div
         variants={{
           hidden: {opacity: 0, y:75},
-          visible: {opacity: 1, y:0, padding: padding},
+          visible: {opacity: 1, y:0, padding:0},
         }}
         initial='hidden'
         animate={mainControls}

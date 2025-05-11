@@ -1,12 +1,16 @@
 import { FC } from "react";
 
 interface StackCardProps {
-  tech: string;
+  name: string;
+  logo: string;
 }
 
-const StackCard: FC<StackCardProps> =({tech}: StackCardProps) => {
+const StackCard: FC<StackCardProps> = ({name, logo}: StackCardProps) => {
   return (
-    <span className='stack__card'>{tech}</span>
+    <div className='stack__card'>
+      <img src={logo} alt={`${name}-logo`} className="stack__logo"/>
+      {name}
+    </div>
   )
 }
 
