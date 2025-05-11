@@ -47,11 +47,11 @@ const LargeCard = memo(({category, section, name, year, thumbnail, desc1, desc2,
         <div className="lCard__info">
           <div className="lCard__wrapper">
             <Reveal width="unset">
-              <h6 className="lCard__subtitle">Featured Project</h6>
+              <h6 className="lCard__subtitle">{category === 'personal' ? 'Personal ' : 'Client ' }Project</h6>
               <h4 className="lCard__title">{name}</h4>     
             </Reveal> 
 
-            <span className="lCard__year">{year}</span>
+            {/* <span className="lCard__year">{year}</span> */}
           </div>
 
           <Reveal width="unset">
@@ -132,15 +132,16 @@ const LargeCard = memo(({category, section, name, year, thumbnail, desc1, desc2,
             </div>
             
           ) : (
-            <button 
-              className='cta lCard__cta' 
-              role='button' 
-              aria-label='View site snapshots' 
-              onClick={onClick}
-              >
-                  <FontAwesomeIcon icon={faEye} />
-                  View Gallery
-            </button>
+            // <button 
+            //   className='cta lCard__cta' 
+            //   role='button' 
+            //   aria-label='View site snapshots' 
+            //   onClick={onClick}
+            //   >
+            //       <FontAwesomeIcon icon={faEye} />
+            //       View Gallery
+            // </button>
+            null
           )}
         </div>
     </article>
