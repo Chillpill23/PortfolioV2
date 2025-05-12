@@ -24,7 +24,7 @@ interface LargeCardProps {
   github?:string;
 }
 
-const LargeCard = memo(({category, section, name, year, thumbnail, desc1, desc2, frontend, backend, database, url, onClick,github}:LargeCardProps) => {
+const LargeCard = memo(({category, section, name, thumbnail, desc1, desc2, frontend, backend, url, onClick,github}:LargeCardProps) => {
 
   return (
     <article className={`${section}__lCard`}>
