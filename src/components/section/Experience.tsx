@@ -1,15 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Reveal } from '../../utils'
 import { LargeCard, SmallCard } from '../ui'
-import { lazy, memo, Suspense, useState } from 'react';
-import { ProjectType } from '../../types/data';
+import { memo, useEffect, useState } from 'react';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import { Experience, Projects } from '../../constants';
+import { ProjectType } from '../../types/data';
 
 const ExperienceSection = memo(() => {
 
-  const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
-  const LazyModal = lazy(() => import("../ui/Modal"));
+  const [featuredProjects, setFeaturedProjects] = useState<ProjectType[]>([])
+  const [generalProjects, setGeneralProjects] = useState<ProjectType[]>([])
+
+  useEffect(() => {
+    setFeaturedProjects(Projects.filter(project => project.featured))
+    setGeneralProjects(Projects.filter(project => project.featured !== true))
+  }, [])
+  
 
   return (
     <>
@@ -56,27 +62,28 @@ const ExperienceSection = memo(() => {
           <Reveal>
             <h3 className='section-header'>
               <span className="sublight">03.</span> 
-              <span className='section__title'>Some Things I&apos;ve Built</span>
+              <span className='section__title'>Featured Projects</span>
             </h3>
           </Reveal>
 
 
           <div className="projects__cards">
-              {Projects.map((project) => {
+              {featuredProjects.map((project) => {
                 return(
-                  <LargeCard 
+                  <LargeCard
                     key={project.name}
                     category={project.category}
                     section={project.section}
+                    type={project.type}
+                    featured={project.featured}
                     name={project.name}
-                    year={project.year}
                     thumbnail={project.thumbnail}
+                    thumbnailHover={project.thumbnailHover}
                     desc1={project.desc1}
                     desc2={project.desc2}
                     frontend={project.frontend}
                     backend={project.backend}
                     images={project.images}
-                    onClick={() => {setSelectedProject(project)}}
                     url={project.url}
                     github={project.github}
                   />
@@ -84,11 +91,34 @@ const ExperienceSection = memo(() => {
               })}
           </div>
 
-          {selectedProject && (
-            <Suspense fallback={<div>Loading...</div>}>
-              <LazyModal project={selectedProject} onClose={() => setSelectedProject(null)} />
-            </Suspense>
-          )}
+          <Reveal>
+            <h3 className='section-header general'>
+              <span className="sublight">|</span> 
+              <span className='section__title'>Other Things I've built</span>
+            </h3>
+          </Reveal>
+
+
+          <div className='projects__cards-general'>
+            {generalProjects.map((project) => {
+              return(
+                <LargeCard
+                  key={project.name}
+                  category={project.category}
+                  section={project.section}
+                  featured={project.featured}
+                  name={project.name}
+                  thumbnail={project.thumbnail}
+                  thumbnailHover={project.thumbnailHover}
+                  frontend={project.frontend}
+                  backend={project.backend}
+                  images={project.images}
+                  url={project.url}
+                  github={project.github}
+                />
+              )
+            })}
+          </div>
         </div>
       </section>
     </>
