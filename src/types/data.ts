@@ -3,12 +3,14 @@ import { ReactNode } from "react";
 export interface ProjectType {
   category: string;
   section: string;
+  type:string;
   year:string;
+  featured:boolean;
   thumbnail: string;
-  thumbnailDesktop?: string;
+  thumbnailHover?: string;
   images?: string[];
   name: string;
-  desc1: string;
+  desc1?: string;
   desc2?: string;
   frontend: string[];
   backend?: string[];

@@ -3,7 +3,7 @@
   --fs-xxl:clamp(2.2rem, 5vw, 3.915rem); /*35.2 68px */
   --fs-xl:clamp(2rem, 3.8vw, 2.6rem); /*32 - 48px */
   --fs-l:clamp(1.5rem, 3.5vw, 2.1rem); /*28 - 39px */
-  --fs-m:clamp(1.5rem, 3vw, 1.853rem); /*24 - 31px */
+  --fs-m:clamp(1.5rem, 3vw, 1.653rem); /*24 - 31px */
   --fs-s:clamp(1.25rem, 2.5vw, 1.2rem); /*20 - 25px */
   --fs-xs:clamp(1rem, 2vw, 1rem); /*16px */
 

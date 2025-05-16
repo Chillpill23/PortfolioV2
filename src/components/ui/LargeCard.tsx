@@ -10,11 +10,14 @@ import { Stack } from "../../constants/Stack";
 interface LargeCardProps {
   category:string;
   section:string;
+  type?:string;
   name:string;
-  year:string;
+  year?:string;
+  featured:boolean;
   thumbnail:string;
+  thumbnailHover?:string;
   images?:string[];
-  desc1:string;
+  desc1?:string;
   desc2?:string;
   frontend:string[];
   backend?:string[];
@@ -24,7 +27,7 @@ interface LargeCardProps {
   github?:string;
 }
 
-const LargeCard = memo(({category, section, name, thumbnail, desc1, desc2, frontend, backend, url, onClick,github}:LargeCardProps) => {
+const LargeCard = memo(({category, section, type, name, featured, thumbnail, thumbnailHover, desc1, desc2, frontend, backend, url, onClick,github}:LargeCardProps) => {
 
   return (
     <article className={`${section}__lCard`}>
@@ -32,14 +35,14 @@ const LargeCard = memo(({category, section, name, thumbnail, desc1, desc2, front
         {category === "personal" ? (
           <a className="lCard__image" target='_blank' rel="noopener noreferrer" href={url}>
             <picture>
-              <source className='springy' srcSet={thumbnail} media='(min-width:768px)'/>
-              <img loading='lazy' className='springy' src={thumbnail} alt={`${name} thumbnail`}/>
+              <img loading='lazy' src={thumbnail} alt={`${name} thumbnail`}/>
+              <img loading='lazy' src={thumbnailHover} alt={`${name} thumbnail`}/>
             </picture>
           </a>
         ) : (
           <picture className="lCard__image" onClick={onClick}>
-            <source className='springy' srcSet={thumbnail} media='(min-width:768px)'/>
-            <img loading='lazy' className='springy' src={thumbnail} alt={`${name} thumbnail`}/>
+            <img loading='lazy' src={thumbnail} alt={`${name} thumbnail`}/>
+            <img loading='lazy' src={thumbnailHover} alt={`${name} thumbnail`}/>
           </picture>
         )}
 
@@ -48,7 +51,14 @@ const LargeCard = memo(({category, section, name, thumbnail, desc1, desc2, front
           <div className="lCard__wrapper">
             <Reveal width="unset">
               <h6 className="lCard__subtitle">{category === 'personal' ? 'Personal ' : 'Client ' }Project</h6>
-              <h4 className="lCard__title">{name}</h4>     
+
+              {featured ? 
+                <h4 className="lCard__title">{name} - {type}</h4>       
+              :
+                <h4 className="lCard__title">{name}</h4>  
+              }
+
+
             </Reveal> 
 
             {/* <span className="lCard__year">{year}</span> */}
@@ -62,32 +72,54 @@ const LargeCard = memo(({category, section, name, thumbnail, desc1, desc2, front
               )}
           </Reveal>
           
-          <div className="lCard__outer__wrapper">
-            <h5 className="lCard__stack__title">Frontend</h5>
-            <div className="lCard__stack stack-wrapper">
+          {featured ? 
+            <>
+              <div className="lCard__outer__wrapper">
+                <h5 className="lCard__stack__title">Frontend</h5>
+                <div className="lCard__stack stack-wrapper">
 
-                {frontend.map((tech) => {
-                  const stackItem = Stack.find((s) => s.name === tech)
-                  if(!stackItem) return null
+                    {frontend.map((tech) => {
+                      const stackItem = Stack.find((s) => s.name === tech)
+                      if(!stackItem) return null
 
-                  return(
-                    <Reveal padding='0.5rem 0' key={tech}>
-                      <StackCard 
-                        name={stackItem.name} 
-                        logo={stackItem.logo}
-                      />
-                    </Reveal>
-                  )
-                })}
-            </div>
-          </div>
+                      return(
+                        <Reveal padding='0.5rem 0' key={tech}>
+                          <StackCard 
+                            name={stackItem.name} 
+                            logo={stackItem.logo}
+                          />
+                        </Reveal>
+                      )
+                    })}
+                </div>
+              </div>
 
-          {backend ? (
+              {backend ? (
+                <div className="lCard__outer__wrapper">
+                  <h5 className="lCard__stack__title">Backend</h5>
+                  <div className="lCard__stack stack-wrapper">
+
+                      {backend.map((tech) => {
+                        const stackItem = Stack.find((s) => s.name === tech)
+                        if(!stackItem) return null
+
+                        return(
+                          <Reveal padding='0.5rem 0' key={tech}>
+                            <StackCard 
+                              name={stackItem.name} 
+                              logo={stackItem.logo}
+                            />
+                          </Reveal>
+                        )
+                      })}
+                  </div>
+                </div>
+              ) : null}
+            </>
+          : 
             <div className="lCard__outer__wrapper">
-              <h5 className="lCard__stack__title">Backend</h5>
               <div className="lCard__stack stack-wrapper">
-
-                  {backend.map((tech) => {
+                  {frontend.map((tech) => {
                     const stackItem = Stack.find((s) => s.name === tech)
                     if(!stackItem) return null
 
@@ -100,9 +132,27 @@ const LargeCard = memo(({category, section, name, thumbnail, desc1, desc2, front
                       </Reveal>
                     )
                   })}
+
+                  {backend ? (
+                    backend.map((tech) => {
+                      const stackItem = Stack.find((s) => s.name === tech)
+                      if(!stackItem) return null
+
+                      return(
+                        <Reveal padding='0.5rem 0' key={tech}>
+                          <StackCard 
+                            name={stackItem.name} 
+                            logo={stackItem.logo}
+                          />
+                        </Reveal>
+                      )
+                    })
+                  ) : null}
               </div>
             </div>
-          ) : null}
+          }
+
+
 
           {category === "personal" ? (
             <div className="lCard__link__wrapper">
