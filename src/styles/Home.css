@@ -169,8 +169,8 @@
   display: -ms-grid;
   display: grid;
   grid-auto-flow: row;
-  -ms-grid-columns: 1fr 0.5rem 1fr;
-  grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: 1fr;
+  grid-template-columns: repeat(1, 1fr);
   grid-gap:0.5rem;
 }
 
@@ -182,10 +182,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
   height: 100%;
 }
 
@@ -194,18 +190,17 @@
 }
 
 .sCard__visual{
-  background: var(--clr-neutral800);
   width: 100%;
-  padding: 1.5rem 1rem;
+  padding: 0.5rem 0;
   border-radius: 4px;
-  flex:4
+  flex: 4;
 }
 
 .sCard__visual * {
   color: var(--clr-primary400);
   fill: var(--clr-primary400);
-  font-size: var(--fs-l);
-  font-weight: 700;
+  font-size: var(--fs-xxl);
+  font-weight: 600;
   font-family: var(--ff-main);
 }
 
@@ -253,6 +248,7 @@
 
 .lCard__title{
   margin-bottom: 0;
+  font-weight: 700;
 }
 
 .lCard__image{
@@ -423,7 +419,6 @@
 .stack__title{
   margin-top: 1.5rem;
   color: var(--clr-neutral300);
-  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -637,9 +632,9 @@
   }
 
   .exp__cards{
-    -ms-grid-columns: 1fr 1rem 1fr 1rem 1fr;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap:1rem;
+    -ms-grid-columns: 1fr 1rem 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem 2rem;
   }
 
   .exp__cards > div > div{
@@ -647,11 +642,10 @@
   }
 
   .sCard__visual{
-    padding: 1.8rem 1rem;
+    padding: 0 0.5rem;
   }
 
   .sCard__visual * {
-    font-size: var(--fs-l);
     letter-spacing: 2px;
   }
 
@@ -716,12 +710,12 @@
   }
 
   .stack__title{
-    flex: 5;
+    flex: 4;
     margin: 0;
   }
 
   .stack__tech{
-    flex:7;
+    flex:8;
   }
 
   .stack__tech .stack__card{
@@ -788,8 +782,7 @@
   
   .projects__cards-general{
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 4rem;
-    grid-row-gap: 6rem;
+    grid-gap: 6rem;
 
     .projects__lCard{
       flex-direction: column;
@@ -804,6 +797,12 @@
     .lCard__subtitle{
       display: none;
     }
+  }
+
+  .exp__cards{
+    -ms-grid-columns: 1fr 1rem 1fr 1rem 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem 4rem;
   }
 
 }
@@ -834,19 +833,10 @@
 
   /* Experience - Large Desktops */
   .exp__sCard{
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    background: var(--clr-neutral800);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0;
     border-radius: 4px;
   }
 
-  .sCard__visual{
-    background:none;
-    padding: 0.5rem;
-  }
 
   .sCard__content{
     text-align: left;

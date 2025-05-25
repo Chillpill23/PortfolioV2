@@ -8,10 +8,10 @@ const Projects = () => {
     <section className="contact" id='contact'>
         <div className="contact__wrapper container">
           <Reveal>
-            <h3 className='section-header'>
+            <h2 className='section-header'>
               <span className="sublight">04.</span> 
               <span className='section__title'>What&apos;s Next?</span>
-            </h3>
+            </h2>
           </Reveal>
 
           <Reveal>

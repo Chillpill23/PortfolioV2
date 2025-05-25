@@ -5,26 +5,26 @@ import { ExprienceType } from '../types/data'
 export const Experience:ExprienceType[] = [
   {
     name:'sites',
-    stats:15,
-    desc:'Led front-end development for 15+ client websites and maintained even more.',
+    stats:20,
+    desc:'Client websites built, optimized, and deployed.',
     icon:''
   },
   {
     name:'tickets',
-    stats:250,
-    desc:'Resolved 250+ updates, maintenance, and client requests tickets.',
+    stats:310,
+    desc:'Updates, maintenance, and client requests tickets resolved.',
     icon:''
   },
   {
     name:'communication',
-    stats:20,
-    desc:'Provided client communication and step-by-step CMS training.',
+    stats:25,
+    desc:'Step-by-step CMS training conducted. Improving client independence by 40%',
     icon:<FontAwesomeIcon icon={faComments} />
   },
   {
     name:'documentation',
-    stats:12,
-    desc:'Created process and code documentation to enhance coding efficiency and team collaboration.',
+    stats:22,
+    desc:'Process and code documentation created to enhance work efficiency and team collaboration.',
     icon:<FontAwesomeIcon icon={faProjectDiagram} />
   },
   {
@@ -36,7 +36,7 @@ export const Experience:ExprienceType[] = [
   {
     name:'integrations',
     stats:7,
-    desc:'Spearheaded integration with key third-party services reusable code for efficient deployment.',
+    desc:'Key third-party services integrated and created reusable code for efficient deployment.',
     icon: <FontAwesomeIcon icon={faLaptopCode} />
   },
 ]
