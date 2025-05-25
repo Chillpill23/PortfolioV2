@@ -130,10 +130,10 @@ const AboutSection = () => {
     <section className="about" id='about'>
       <div className="about__wrapper container">
         <Reveal>
-          <h3 className='section-header'>
+          <h2 className='section-header'>
             <span className="sublight">01.</span> 
             <span className='section__title'>About Me</span>
-          </h3>
+          </h2>
         </Reveal>
 
         {aboutContent}

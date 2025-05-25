@@ -22,10 +22,10 @@ const ExperienceSection = memo(() => {
       <section className="exp" id='experience'>
         <div className="exp__wrapper container">
           <Reveal>
-            <h3 className='section-header'>
+            <h2 className='section-header'>
               <span className="sublight">02.</span> 
               <span className='section__title'>Where I&apos;ve Worked</span>
-            </h3>
+            </h2>
           </Reveal>
 
           <div className='exp__content'>
@@ -60,10 +60,10 @@ const ExperienceSection = memo(() => {
       <section className="projects" id='projects'>
         <div className="projects__wrapper container">
           <Reveal>
-            <h3 className='section-header'>
+            <h2 className='section-header'>
               <span className="sublight">03.</span> 
               <span className='section__title'>Featured Projects</span>
-            </h3>
+            </h2>
           </Reveal>
 
 
