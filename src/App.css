@@ -17,16 +17,12 @@
 
   /* Colors */
   --clr-primary:#8623FF;
-  --clr-primarydark:#310e5d;
-  --clr-primary900:#5c17af;
-  --clr-primary800:#6d21c8;
-  --clr-primary400:#D8B6FF;
-  --clr-primary200:#ECDAFF;
-  --clr-primary100:#F6EDFF;
-
-  --clr-secondary400:#FCBA6E;
-  --clr-secondary200:#FFC98B;
-  --clr-secondary100:#FFE0BC;
+  --clr-primarydark:#33076e;
+  --clr-primary900:#6116b7;
+  --clr-primary800:#7a16eb;
+  --clr-primary400:#c7aaff;
+  --clr-primary200:#eee7ff;
+  --clr-primary100:#f5f2ff;
 
   --clr-neutral:#FFFFFF;
   --clr-neutral200:#e5e3e6;

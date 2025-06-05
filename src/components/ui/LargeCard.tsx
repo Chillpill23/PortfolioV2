@@ -31,21 +31,13 @@ const LargeCard = memo(({category, section, type, name, featured, thumbnail, thu
 
   return (
     <article className={`${section}__lCard`}>
-
-        {category === "personal" ? (
-          <a className="lCard__image" target='_blank' rel="noopener noreferrer" href={url}>
-            <picture>
-              <img loading='lazy' src={thumbnail} alt={`${name} thumbnail`}/>
-              <img loading='lazy' src={thumbnailHover} alt={`${name} thumbnail`}/>
-            </picture>
-          </a>
-        ) : (
-          <picture className="lCard__image" onClick={onClick}>
+      
+        <a className="lCard__image" target='_blank' rel="noopener noreferrer" href={url}>
+          <picture>
             <img loading='lazy' src={thumbnail} alt={`${name} thumbnail`}/>
             <img loading='lazy' src={thumbnailHover} alt={`${name} thumbnail`}/>
           </picture>
-        )}
-
+        </a>
 
         <div className="lCard__info">
           <div className="lCard__wrapper">
@@ -60,8 +52,6 @@ const LargeCard = memo(({category, section, type, name, featured, thumbnail, thu
 
 
             </Reveal> 
-
-            {/* <span className="lCard__year">{year}</span> */}
           </div>
 
           <Reveal width="unset">

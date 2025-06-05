@@ -41,20 +41,6 @@ export const Projects: ProjectType[] = [
     github:"https://github.com/Chillpill23/Forever"
   },
   {
-    category:'personal',
-    section: 'projects',
-    type:'Landing Page Concept',
-    year:'2025',
-    featured:false,
-    thumbnail: yhThumb,
-    thumbnailHover: yhHover,
-    name: "York Hamilton",
-    desc1: "A homepage concept design for York Hamilton featuring a sleek, modern layout with a professional aesthetic that showcases projects and services effectively.",
-    frontend: ['React', 'Typescript', 'Sass / Scss', 'Vite'],
-    url:"https://chillpill23.github.io/YorkHamilton/",
-    github:"https://github.com/Chillpill23/YorkHamilton"
-  },
-  {
     category:'work',
     section: 'projects',
     type:'Automotive Ecommerce',
@@ -66,6 +52,7 @@ export const Projects: ProjectType[] = [
     desc1: "I developed a custom e-commerce solution for an oil drain valve manufacturer, handling tailored design implementation, feature development, and Core Web Vitals optimization to enhance performance and boost user engagement.",
     frontend: ['HTML', 'CSS', 'Javascript','JQuery', 'Bootstrap'],
     backend: ['PHP'],
+    url:"https://ezoildrainvalve.com/",
   },
   {
     category:'work',
@@ -79,6 +66,7 @@ export const Projects: ProjectType[] = [
     desc1: "I engineered a performance-optimized e-commerce platform for a high-performance radiator manufacturer, delivering custom design integration, advanced feature development, and SEO to ensure fast load times and improved user experience.",
     frontend: ['HTML', 'CSS', 'Javascript','JQuery', 'Bootstrap'],
     backend: ['PHP'],
+    url:"https://wizardcooling.com/",
   },
   {
     category:'work',
@@ -92,6 +80,7 @@ export const Projects: ProjectType[] = [
     desc1: "I built a customized e-commerce solution for West Coast Metric, a classic Volkswagen parts provider, focusing on personalized design, feature-rich development, and performance tuning through Search Engine Optimization to improve speed, usability, and customer engagement.",
     frontend: ['HTML', 'CSS', 'Javascript','JQuery', 'Bootstrap'],
     backend: ['PHP'],
+    url:"https://www.westcoastmetric.com/",
   },
     {
     category:'work',
@@ -105,6 +94,7 @@ export const Projects: ProjectType[] = [
     desc1: "I engineered a custom e-commerce solution for Prestige Motorsports, delivering tailored design integration, robust feature development, and SEO enhancements to boost search visibility and increase user engagement.",
     frontend: ['HTML', 'CSS', 'Javascript','JQuery', 'Bootstrap'],
     backend: ['PHP'],
+    url:"https://shop.prestigemoto.com/",
   },
   {
     category:'client',
@@ -118,6 +108,7 @@ export const Projects: ProjectType[] = [
     desc1: "An ecommerce website built as the platform for ExergyPerformance one of the leading retailes/manufacturers of high performance diesel parts in the U.S.",
     frontend: ['HTML', 'CSS', 'Javascript', 'JQuery', 'Bootstrap'],
     backend: ['PHP'],
+    url:"https://www.exergyperformance.com/",
   },
   // {
   //   category:'personal',
@@ -133,5 +124,19 @@ export const Projects: ProjectType[] = [
   //   backend: ['MongoDB', 'ExpressJS', 'NodeJS','Tanstack Query', 'Vercel'],
   //   url:"https://klimate-mu.vercel.app/",
   //   github:"https://github.com/Chillpill23/Klimate"
+  // },
+  // {
+  //   category:'personal',
+  //   section: 'projects',
+  //   type:'Landing Page Concept',
+  //   year:'2025',
+  //   featured:false,
+  //   thumbnail: yhThumb,
+  //   thumbnailHover: yhHover,
+  //   name: "York Hamilton",
+  //   desc1: "A homepage concept design for York Hamilton featuring a sleek, modern layout with a professional aesthetic that showcases projects and services effectively.",
+  //   frontend: ['React', 'Typescript', 'Sass / Scss', 'Vite'],
+  //   url:"https://chillpill23.github.io/YorkHamilton/",
+  //   github:"https://github.com/Chillpill23/YorkHamilton"
   // },
 ];
