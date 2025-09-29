@@ -1,6 +1,6 @@
 import StackCard from "./StackCard"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEye, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
+import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 
 import { Reveal } from "../../utils/Reveal"
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -32,11 +32,16 @@ const LargeCard = memo(({category, section, type, name, featured, thumbnail, thu
   return (
     <article className={`${section}__lCard`}>
       
-        <a className="lCard__image" target='_blank' rel="noopener noreferrer" href={url}>
+        <a className="lCard__image" target='_blank' rel="noopener noreferrer" title="View Live site" href={url}>
           <picture>
             <img loading='lazy' src={thumbnail} alt={`${name} thumbnail`}/>
             <img loading='lazy' src={thumbnailHover} alt={`${name} thumbnail`}/>
           </picture>
+
+          <div className="lCard__visit">
+            <FontAwesomeIcon className="icon" size="lg" icon={faUpRightFromSquare} /> 
+            <span>Visit Live Site</span>
+          </div>
         </a>
 
         <div className="lCard__info">
@@ -144,7 +149,7 @@ const LargeCard = memo(({category, section, type, name, featured, thumbnail, thu
 
 
 
-          {category === "personal" ? (
+
             <div className="lCard__link__wrapper">
               <a 
                 href={url}
@@ -157,32 +162,20 @@ const LargeCard = memo(({category, section, type, name, featured, thumbnail, thu
               >
                   <FontAwesomeIcon className="icon" size="lg" icon={faUpRightFromSquare} />
               </a>
-
-              <a 
-                href={github}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='' 
-                role='button' 
-                aria-label='View Github repository'
-                title="View Github repository"
-              >
-                  <FontAwesomeIcon className="icon" size="lg" icon={faGithub} />
-              </a>
+              {category === "personal" ? (
+                  <a 
+                    href={github}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='' 
+                    role='button' 
+                    aria-label='View Github repository'
+                    title="View Github repository"
+                  >
+                      <FontAwesomeIcon className="icon" size="lg" icon={faGithub} />
+                  </a>
+              ) : null }
             </div>
-            
-          ) : (
-            // <button 
-            //   className='cta lCard__cta' 
-            //   role='button' 
-            //   aria-label='View site snapshots' 
-            //   onClick={onClick}
-            //   >
-            //       <FontAwesomeIcon icon={faEye} />
-            //       View Gallery
-            // </button>
-            null
-          )}
         </div>
     </article>
   )
