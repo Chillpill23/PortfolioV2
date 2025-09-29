@@ -253,13 +253,68 @@
 
 .lCard__image{
   position: relative;
+
+  &:hover{
+    .icon path{
+      fill:var(--clr-primary400);
+    }
+
+    .lCard__visit {
+      padding-right:1rem;
+      width:10.2rem;
+      transition:0.2s ease all;
+
+      span{
+        opacity: 1;
+        transition: 1s ease all;
+      }
+    }
+
+  }
+}
+
+.lCard__visit{
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+
+  display:flex;
+  align-items: center;
+
+  background:var(--clr-neutral800);
+  border-radius: 10rem;
+  color: var(--clr-neutral);
+  width:45px;
+  height:46px;
+
+  transition:0.2s ease all;
+}
+
+.lCard__visit span{
+  color: var(--clr-neutral);
+  font-weight: 600;
+  opacity: 0;
+  transition: 0.1s ease all;
+}
+
+
+.lCard__image .icon{
+    background: var(--clr-neutral800);
+    border-radius: 10rem;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+
+    path{
+      fill:var(--clr-primary200);
+      transition:0.2s ease all;
+    }
 }
 
 .lCard__image source, .lCard__image img{
   width: 100%;
   border-radius: 25px;
   cursor: pointer;
-  animation: baseImage 12s infinite;
+  /* animation: baseImage 12s infinite; */
   transition:0.5s ease all;
 }
 
@@ -268,8 +323,17 @@
   opacity: 0;
   z-index: 0;
   position: absolute;
-  animation: subImage 12s infinite;
+  /* animation: subImage 12s infinite; */
 }
+
+.lCard__image:hover img:first-child{
+  opacity:0
+}
+
+.lCard__image:hover img:nth-child(2){
+  opacity:1
+}
+
 
 @keyframes baseImage {
   0% { opacity: 1; }
@@ -720,7 +784,7 @@
 
   .stack__wrapper{
     flex-direction: row;
-    margin: 3rem 0;
+    margin: 2rem 0;
   }
 
   .stack__title{

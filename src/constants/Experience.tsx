@@ -5,7 +5,7 @@ import { ExprienceType } from '../types/data'
 export const Experience:ExprienceType[] = [
   {
     name:'sites',
-    stats:20,
+    stats:24,
     desc:'Client websites built, optimized, and deployed.',
     icon:''
   },

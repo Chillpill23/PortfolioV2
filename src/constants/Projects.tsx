@@ -45,7 +45,7 @@ export const Projects: ProjectType[] = [
     section: 'projects',
     type:'Automotive Ecommerce',
     year:'2024',
-    featured:true,
+    featured:false,
     thumbnail: ezThumb,
     thumbnailHover: ezHover,
     name: "EZ Oil",
