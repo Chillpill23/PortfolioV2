@@ -104,7 +104,7 @@ const LargeCard = memo(({category, section, type, name, featured, thumbnail, thu
                               name={stackItem.name} 
                               logo={stackItem.logo}
                             />
-                          </Reveal>
+                          </Reveal> 
                         )
                       })}
                   </div>
